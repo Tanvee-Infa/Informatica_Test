@@ -1,0 +1,259 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>2ISUXL86zqzm5Y6-gt-4495622-2023-03-23T12:58:27.863Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_case_04461414_IO_test</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nalex@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-03-23T12:58:28Z</types1:CreationDate>
+      <types1:ModifiedBy>nalex@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2023-04-05T15:18:46Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>nalex@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2023-04-05T15:19:00Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_case_04461414_IO_test/tf_case_04461414_IO_test.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_case_04461414_IO_test"
+                   name="tf_case_04461414_IO_test"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Data Task 1" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-case-04461414-IO-test</option>
+                  </options>
+               </field>
+               <field description="" name="IO1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="IO2" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task 1 1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-case-04461414-IO-test---Part2</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lfl4c66n" targetId="lfl4c66m"/>
+               </start>
+               <assignment id="lfl4c66m">
+                  <title>Assignment 1</title>
+                  <operation source="constant" to="temp.Data Task 1[1]/inout[1]/ParamVal">'Nitin'</operation>
+                  <link id="lg3tiq2a" targetId="lfl4c67z"/>
+               </assignment>
+               <eventContainer id="lfl4c67z">
+                  <service id="lfl4c66r">
+                     <title>Data Task 1</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_case_04461414_IO_test</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">5dig9Ms63evieVunxk8p6P</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-case-04461414-IO-test">temp.Data Task 1</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Data Task 1/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Data Task 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Data Task 1/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Data Task 1/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.Data Task 1/inout/ParamVal">ParamVal</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="lg3u2c3q" targetId="lg3tiq3i"/>
+                  <events>
+                     <catch faultField="temp.Data Task 1/fault"
+                            id="lfl4c67x"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Data Task 1/fault"
+                            id="lfl4c67y"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="lg3tiq3i">
+                  <service id="lg3tiq2v">
+                     <title>Data Task 1 1</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_case_04461414_IO_test - Part2</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">hz75AYMx0uCgVPKRmt3oqC</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-case-04461414-IO-test---Part2">temp.Data Task 1 1</operation>
+                           <operation source="field" to="mt-case-04461414-IO-test---Part2/inout[1]/ParamVal2">temp.DataTask1[1]/inout[1]/ParamVal</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Data Task 1 1/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Data Task 1 1/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.Data Task 1 1/inout/ParamVal2">ParamVal2</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="lg3tiq2x" targetId="lfl4c695"/>
+                  <events>
+                     <catch faultField="temp.Data Task 1 1/fault"
+                            id="lfl4c67x"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Data Task 1 1/fault"
+                            id="lfl4c67y"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="lfl4c695" type="exclusive">
+                  <title>Decision 1</title>
+                  <flow id="lfl4c699">
+                     <end id="lfl4c69v"/>
+                  </flow>
+                  <flow id="lfl4c69c">
+                     <link id="lfl4c69d" targetId="lfl4c695" type="containerLink"/>
+                  </flow>
+                  <link id="lfl4c698" targetId="lfl4c699" type="containerLink">
+                     <condition source="formula">
+                        <function name="greater-than">
+                           <arg name="left">{$temp.DataTask1[1]/inout[1]/ParamVal}</arg>
+                           <arg name="right">{10}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lfl4c69b" targetId="lfl4c69c" type="containerLink"/>
+                  <link id="lfl4c69s" targetId="lfl4c69r"/>
+               </container>
+               <jumpTo id="lfl4c69r">
+                  <link id="lfl4c69y" targetId="lfl4c67z"/>
+               </jumpTo>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-case-04461414-IO-test"
+                              isByCopy="true"
+                              name="mt-case-04461414-IO-test">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-case-04461414-IO-test---Part2"
+                              isByCopy="true"
+                              name="mt-case-04461414-IO-test---Part2">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>4azdbUqxXi1gclypdd20ES</types1:GUID>
+      <types1:DisplayName>tf_case_04461414_IO_test</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-20T15:06:11.089Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
