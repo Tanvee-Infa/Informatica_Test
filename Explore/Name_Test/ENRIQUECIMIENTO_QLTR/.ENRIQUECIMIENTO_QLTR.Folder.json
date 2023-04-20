@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "5pVrfVk9oHmfPcI7CDI3gT",
+    "name" : "ENRIQUECIMIENTO_QLTR",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Enriquecimiento de las tablas de momento donde se carga el NPS_DECLARADO para todos los momentos y algún campo relevante dependiendo del momento en cuestión",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}
