@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "5dIOn31fReLkPf80uNNB4o",
+    "name" : "LoadDW",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Contains assets related to Data Warehouse load and Data API extracts.",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

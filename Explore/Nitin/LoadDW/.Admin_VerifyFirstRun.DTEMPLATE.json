@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "4vZgBfdnJYviGGU7nYK8IW",
+    "name" : "Admin_VerifyFirstRun",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR1700000000008W"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "DW is not designed for running more than once a day, and neither are the receiving processes of our clients. This mapping ought to check if the workflow has already finished once, and prevent consecutive runs.\nThis is configurable with the parameter $$ParamCoreRerunnable.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ ]
+}

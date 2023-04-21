@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "2wO0br2AYiLjWa7fav0qy0",
+    "name" : "Admin_StoreWorkletParameters",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR1700000000009B"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Pulls all stored variables from Admin database, looks up new values from the repository and then stores them back to Admin",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ ]
+}

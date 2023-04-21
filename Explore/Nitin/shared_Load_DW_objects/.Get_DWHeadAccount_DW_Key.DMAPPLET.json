@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "76epvLKG9Q2fqg1f6LJPmM",
+    "name" : "Get_DWHeadAccount_DW_Key",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR40000000000012"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Get the Instrument_Dim_Key",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "jJXMBYHdw4kg4JQ5VkhuKP",
+    "name" : "IsNullEmptyStr",
+    "type" : "UDF",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR41000000000007"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "NULL",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/UDF/shared_Load_DW_objects"
+  } ]
+}

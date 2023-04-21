@@ -1,0 +1,317 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>1M0FKi9zhFtybdu-gt-12572115-2023-03-15T07:25:00.852Z::tf.xml</types1:EntryId>
+      <types1:Name>wl_Load_Stg_Custodians</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>tanvee@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-03-15T07:25:01Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="wl_Load_Stg_Custodians"
+                   name="wl_Load_Stg_Custodians"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="ParamFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ParamFileDir" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ParamLoadCustodianProducts" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="s_Load_stg_Custodians_Dist" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-stg-Custodians-Dist</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_CustodianProducts" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-CustodianProducts</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="le5p6jif" targetId="le5p6jie"/>
+               </start>
+               <container id="le5p6jie" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="le5p6jii">
+                     <container id="le5p6jir" type="exclusive">
+                        <title>Decision 1</title>
+                        <flow id="ley2seif">
+                           <eventContainer id="ley2sejd">
+                              <service id="ley2sein">
+                                 <title>s_Load_stg_CustodianProducts</title>
+                                 <serviceName>ICSExecuteDataTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_CustodianProducts</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">5MRgZa1S39El0fFZlxlsA6</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                    <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="s-Load-stg-CustodianProducts">temp.s_Load_stg_CustodianProducts</operation>
+                                       <operation source="constant"
+                                                  to="s-Load-stg-CustodianProducts/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                       <operation source="constant"
+                                                  to="temp.s_Load_stg_CustodianProducts[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                       <operation source="constant"
+                                                  to="s-Load-stg-CustodianProducts/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                       <operation source="constant"
+                                                  to="temp.s_Load_stg_CustodianProducts[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/Object_Name">Object Name</operation>
+                                    <operation source="field" to="temp.s_Load_stg_CustodianProducts/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.s_Load_stg_CustodianProducts/output/Log_Id">Log Id</operation>
+                                    <operation source="field" to="temp.s_Load_stg_CustodianProducts/output/Task_Id">Task Id</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/Task_Status">Task Status</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/Success_Source_Rows">Success Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/Success_Target_Rows">Success Target Rows</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                    <operation source="field" to="temp.s_Load_stg_CustodianProducts/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.s_Load_stg_CustodianProducts/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/Error_Message">Error Message</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/TotalTransErrors">Total Transformation Errors</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/output/FirstErrorCode">First Error Code</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/inout/ParamStepComplete">ParamStepComplete</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_stg_CustodianProducts/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                                 </serviceOutput>
+                              </service>
+                              <events>
+                                 <catch faultField="temp.s_Load_stg_CustodianProducts/fault"
+                                        id="le5p6jm5"
+                                        interrupting="true"
+                                        name="error">
+                                    <suspend/>
+                                 </catch>
+                                 <catch faultField="temp.s_Load_stg_CustodianProducts/fault"
+                                        id="le5p6jm6"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <link id="ley2seig" targetId="le5p6jir" type="containerLink"/>
+                        </flow>
+                        <flow id="ley2seih">
+                           <link id="ley2seii" targetId="le5p6jir" type="containerLink"/>
+                        </flow>
+                        <link id="ley2seid" targetId="ley2seif" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$input.ParamLoadCustodianProducts}</arg>
+                                 <arg name="right">true</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="ley2seie" targetId="ley2seih" type="containerLink"/>
+                     </container>
+                     <link id="le5p6jij" targetId="le5p6jie" type="containerLink"/>
+                  </flow>
+                  <flow id="le5p6jil">
+                     <eventContainer id="le5p6jjh">
+                        <service id="le5p6jj9">
+                           <title>s_Load_stg_Custodians_Dist</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Custodians_Dist</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1YFsqpntSiTiMkoDLQfIEt</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-Custodians-Dist">temp.s_Load_stg_Custodians_Dist</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Custodians-Dist/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Custodians_Dist[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Custodians-Dist/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Custodians_Dist[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_Custodians_Dist/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_Custodians_Dist/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Custodians_Dist/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Custodians_Dist/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Custodians_Dist/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Custodians_Dist/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Custodians_Dist/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/inout/ParamClearTradingAccountID">ParamClearTradingAccountID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/inout/ParamClearCustodianAccountJoin">ParamClearCustodianAccountJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/inout/ParamClearTradingAccountJoin">ParamClearTradingAccountJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/inout/ParamClearCustodianAccountNumber">ParamClearCustodianAccountNumber</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Custodians_Dist/inout/ParamStepComplete">ParamStepComplete</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_Custodians_Dist/fault"
+                                  id="le5p6jjf"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_Custodians_Dist/fault"
+                                  id="le5p6jjg"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5p6jim" targetId="le5p6jie" type="containerLink"/>
+                  </flow>
+                  <link id="le5p6jih" targetId="le5p6jii" type="containerLink"/>
+                  <link id="le5p6jik" targetId="le5p6jil" type="containerLink"/>
+                  <link id="le5p6jig" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Custodians-Dist"
+                              isByCopy="true"
+                              name="s-Load-stg-Custodians-Dist">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-CustodianProducts"
+                              isByCopy="true"
+                              name="s-Load-stg-CustodianProducts">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>ahSmPLcPgHWhDj28BpLqmT</types1:GUID>
+      <types1:DisplayName>wl_Load_Stg_Custodians</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:41:59.978Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "5fMmmW3AzlkkTAYCNSxWe4",
+    "name" : "FileWriteTask",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "i4YclFmVSciY3Ax-gt-594067-2022-09-13T09:03:01.374Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Dynamic",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

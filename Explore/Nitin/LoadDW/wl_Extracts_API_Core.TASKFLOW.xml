@@ -1,0 +1,2387 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>18pNz6HKoJBUhty-gt-12573304-2023-03-15T07:26:39.854Z::tf.xml</types1:EntryId>
+      <types1:Name>wl_Extracts_API_Core</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>tanvee@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-03-15T07:26:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="wl_Extracts_API_Core"
+                   name="wl_Extracts_API_Core"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="ParamFileDir" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ParamFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="s_Extract_HeadAccounts" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-HeadAccounts</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_ScripTransactions" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-ScripTransactions</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_Orders" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-Orders</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_Organisation" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-Organisation</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_SubAccounts" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-SubAccounts</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_Batch" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-Batch</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_CashEntries" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-CashEntries</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Extract_CashLedgerAdjustments"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-CashLedgerAdjustments</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_CMTTrans" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-CMTTrans</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_CorporateActions" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-CorporateActions</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_FRCs" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-FRCs</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_Instruments" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-Instruments</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_MCAs" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-MCAs</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_RegularWithdrawals" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-RegularWithdrawals</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_TradeFeesBreakdown" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-TradeFeesBreakdown</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_Trades" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-Trades</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_Transfers" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-Transfers</option>
+                  </options>
+               </field>
+               <field description="" name="s_Extract_Users" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Extract-Users</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Extract_CashLedgerTransactions"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Extract-CashLedgerTransactions</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="le5rrj0r" targetId="le5rrj0q"/>
+               </start>
+               <container id="le5rrj0q" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="le5rrj0x">
+                     <eventContainer id="le5rrj5t">
+                        <service id="le5rrj5m">
+                           <title>s_Extract_ScripTransactions</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_ScripTransactions</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">90lTX3X3mkBbKuOuOHsa2b</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-ScripTransactions">temp.s_Extract_ScripTransactions</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-ScripTransactions/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_ScripTransactions[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-ScripTransactions/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_ScripTransactions[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_ScripTransactions/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_ScripTransactions/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_ScripTransactions/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_ScripTransactions/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_ScripTransactions/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_ScripTransactions/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_ScripTransactions/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_ScripTransactions/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="leptlvpm" targetId="leptlvqk"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_ScripTransactions/fault"
+                                  id="le5rrj5r"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_ScripTransactions/fault"
+                                  id="le5rrj5s"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="leptlvqk">
+                        <service id="leptlvpl">
+                           <title>s_Extract_CashLedgerTransactions</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_CashLedgerTransactions</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">8fLCFHFvU6bfJQmEdqzD6n</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-CashLedgerTransactions">temp.s_Extract_CashLedgerTransactions</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CashLedgerTransactions/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CashLedgerTransactions[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CashLedgerTransactions/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CashLedgerTransactions[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_CashLedgerTransactions/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_CashLedgerTransactions/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerTransactions/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Extract_CashLedgerTransactions/fault"
+                                  id="le5rrj3n"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_CashLedgerTransactions/fault"
+                                  id="le5rrj3o"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5rrj0y" targetId="le5rrj0q" type="containerLink"/>
+                  </flow>
+                  <flow id="le5rrj0u">
+                     <eventContainer id="le5rrj19">
+                        <service id="le5rrj13">
+                           <title>s_Extract_HeadAccounts</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_HeadAccounts</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">bgsavEOqrYfkQT22AhWK8e</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-HeadAccounts">temp.s_Extract_HeadAccounts</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-HeadAccounts/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_HeadAccounts[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-HeadAccounts/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_HeadAccounts[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_HeadAccounts/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_HeadAccounts/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrj9m" targetId="le5rrj9s"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_HeadAccounts/fault"
+                                  id="le5rrj17"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_HeadAccounts/fault"
+                                  id="le5rrj18"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrj9s">
+                        <service id="le5rrj9l">
+                           <title>s_Extract_Orders</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_Orders</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">3xY5N377SwubbUIe2KlIOt</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-Orders">temp.s_Extract_Orders</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Orders/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Orders[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Orders/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Orders[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Orders/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Orders/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Orders/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_Orders/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Orders/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Orders/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Orders/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Orders/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjbq" targetId="le5rrjbw"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_Orders/fault"
+                                  id="le5rrj9q"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_Orders/fault"
+                                  id="le5rrj9r"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjbw">
+                        <service id="le5rrjbp">
+                           <title>s_Extract_Organisation</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_Organisation</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">4IoooGGiiBncyOYmBmhQ2M</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-Organisation">temp.s_Extract_Organisation</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Organisation/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Organisation[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Organisation/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Organisation[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_Organisation/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Organisation/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjds" targetId="le5rrjdy"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_Organisation/fault"
+                                  id="le5rrjbu"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_Organisation/fault"
+                                  id="le5rrjbv"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjdy">
+                        <service id="le5rrjdr">
+                           <title>s_Extract_SubAccounts</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_SubAccounts</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1JvKEl4LC7AdmqnYdPcKMu</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-SubAccounts">temp.s_Extract_SubAccounts</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-SubAccounts/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_SubAccounts[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-SubAccounts/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_SubAccounts[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/ParamTaxYearEndDate">ParamTaxYearEndDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/Param_Dist_STG_DB_Name">Param_Dist_STG_DB_Name</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_SubAccounts/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_SubAccounts/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjg2" targetId="le5rrjh5"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_SubAccounts/fault"
+                                  id="le5rrjdw"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_SubAccounts/fault"
+                                  id="le5rrjdx"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjh5">
+                        <service id="le5rrjg1">
+                           <title>s_Extract_Batch</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_Batch</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">4ByQJ7BtrWxi5rhBh1vGU6</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-Batch">temp.s_Extract_Batch</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Batch/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Batch[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Batch/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Batch[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/ParamCustomerId">ParamCustomerId</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Batch/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_Batch/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Batch/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Batch/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Batch/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Batch/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjj9" targetId="le5rrjjf"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_Batch/fault"
+                                  id="le5rrjh3"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_Batch/fault"
+                                  id="le5rrjh4"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjjf">
+                        <service id="le5rrjj8">
+                           <title>s_Extract_CashEntries</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_CashEntries</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">khHW8GuEkIWhKpWuq4HVUu</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-CashEntries">temp.s_Extract_CashEntries</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CashEntries/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CashEntries[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CashEntries/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CashEntries[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/inout/ParamStepComplete">ParamStepComplete</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_CashEntries/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashEntries/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjlj" targetId="le5rrjlp"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_CashEntries/fault"
+                                  id="le5rrjjd"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_CashEntries/fault"
+                                  id="le5rrjje"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjlp">
+                        <service id="le5rrjli">
+                           <title>s_Extract_CashLedgerAdjustments</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_CashLedgerAdjustments</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">a58MNiQdPFrdgGA324XeGs</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-CashLedgerAdjustments">temp.s_Extract_CashLedgerAdjustments</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CashLedgerAdjustments/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CashLedgerAdjustments[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CashLedgerAdjustments/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CashLedgerAdjustments[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_CashLedgerAdjustments/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_CashLedgerAdjustments/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_CashLedgerAdjustments/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CashLedgerAdjustments/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjnn" targetId="le5rrjoo"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_CashLedgerAdjustments/fault"
+                                  id="le5rrjln"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_CashLedgerAdjustments/fault"
+                                  id="le5rrjlo"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjoo">
+                        <service id="le5rrjnm">
+                           <title>s_Extract_CMTTrans</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_CMTTrans</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">jCPp4ZWoUO1fa4sgdlB8uj</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-CMTTrans">temp.s_Extract_CMTTrans</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CMTTrans/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CMTTrans[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CMTTrans/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CMTTrans[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_CMTTrans/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CMTTrans/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjqm" targetId="le5rrjqs"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_CMTTrans/fault"
+                                  id="le5rrjom"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_CMTTrans/fault"
+                                  id="le5rrjon"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjqs">
+                        <service id="le5rrjql">
+                           <title>s_Extract_CorporateActions</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_CorporateActions</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">2B3FYWWpP8KguIgEjFqWgC</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-CorporateActions">temp.s_Extract_CorporateActions</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CorporateActions/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CorporateActions[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-CorporateActions/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_CorporateActions[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_CorporateActions/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_CorporateActions/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_CorporateActions/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_CorporateActions/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_CorporateActions/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_CorporateActions/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_CorporateActions/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_CorporateActions/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjss" targetId="le5rrjtw"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_CorporateActions/fault"
+                                  id="le5rrjqq"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_CorporateActions/fault"
+                                  id="le5rrjqr"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjtw">
+                        <service id="le5rrjsr">
+                           <title>s_Extract_FRCs</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_FRCs</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">80gxtBWxzcqdlgV6iPiA81</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-FRCs">temp.s_Extract_FRCs</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-FRCs/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_FRCs[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-FRCs/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_FRCs[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_FRCs/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_FRCs/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_FRCs/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_FRCs/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_FRCs/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_FRCs/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_FRCs/inout/DataAPIHeaderFooter_ParamAPIFileVersion1">DataAPIHeaderFooter_ParamAPIFileVersion1</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_FRCs/inout/DataAPIHeaderFooter_ParamProcessDate1">DataAPIHeaderFooter_ParamProcessDate1</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_FRCs/inout/DataAPIHeaderFooter_ParamProcessRunID1">DataAPIHeaderFooter_ParamProcessRunID1</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjw0" targetId="le5rrjw6"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_FRCs/fault"
+                                  id="le5rrjtu"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_FRCs/fault"
+                                  id="le5rrjtv"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjw6">
+                        <service id="le5rrjvz">
+                           <title>s_Extract_Instruments</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_Instruments</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">15OTaK576oxldqqAOtrtIS</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-Instruments">temp.s_Extract_Instruments</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Instruments/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Instruments[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Instruments/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Instruments[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_Instruments/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Instruments/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrjy6" targetId="le5rrjz8"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_Instruments/fault"
+                                  id="le5rrjw4"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_Instruments/fault"
+                                  id="le5rrjw5"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrjz8">
+                        <service id="le5rrjy5">
+                           <title>s_Extract_MCAs</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_MCAs</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">4er4AyVOZAbiw8Ttyrwcoc</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-MCAs">temp.s_Extract_MCAs</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-MCAs/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_MCAs[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-MCAs/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_MCAs[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_MCAs/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_MCAs/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_MCAs/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_MCAs/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_MCAs/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_MCAs/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrk18" targetId="le5rrk1e"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_MCAs/fault"
+                                  id="le5rrjz6"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_MCAs/fault"
+                                  id="le5rrjz7"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrk1e">
+                        <service id="le5rrk17">
+                           <title>s_Extract_RegularWithdrawals</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_RegularWithdrawals</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">73i5WYV10bPeJluCbsFze2</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-RegularWithdrawals">temp.s_Extract_RegularWithdrawals</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-RegularWithdrawals/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_RegularWithdrawals[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-RegularWithdrawals/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_RegularWithdrawals[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_RegularWithdrawals/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_RegularWithdrawals/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_RegularWithdrawals/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_RegularWithdrawals/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_RegularWithdrawals/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_RegularWithdrawals/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrk38" targetId="le5rrk47"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_RegularWithdrawals/fault"
+                                  id="le5rrk1c"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_RegularWithdrawals/fault"
+                                  id="le5rrk1d"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrk47">
+                        <service id="le5rrk37">
+                           <title>s_Extract_TradeFeesBreakdown</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_TradeFeesBreakdown</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">8qOAxwsyP41jONoKTDSuAu</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-TradeFeesBreakdown">temp.s_Extract_TradeFeesBreakdown</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-TradeFeesBreakdown/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_TradeFeesBreakdown[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-TradeFeesBreakdown/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_TradeFeesBreakdown[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_TradeFeesBreakdown/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_TradeFeesBreakdown/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_TradeFeesBreakdown/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_TradeFeesBreakdown/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_TradeFeesBreakdown/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_TradeFeesBreakdown/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrk61" targetId="le5rrk67"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_TradeFeesBreakdown/fault"
+                                  id="le5rrk45"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_TradeFeesBreakdown/fault"
+                                  id="le5rrk46"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrk67">
+                        <service id="le5rrk60">
+                           <title>s_Extract_Trades</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_Trades</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">3X0DYAJ2xmzbCU5kTW7pIQ</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-Trades">temp.s_Extract_Trades</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Trades/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Trades[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Trades/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Trades[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Trades/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Trades/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Trades/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_Trades/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Trades/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Trades/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Trades/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Trades/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrk85" targetId="le5rrk8b"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_Trades/fault"
+                                  id="le5rrk65"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_Trades/fault"
+                                  id="le5rrk66"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrk8b">
+                        <service id="le5rrk84">
+                           <title>s_Extract_Transfers</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_Transfers</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">jT31dEfXRoklkhOcne66QI</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-Transfers">temp.s_Extract_Transfers</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Transfers/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Transfers[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Transfers/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Transfers[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_Transfers/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Transfers/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5rrka9" targetId="le5rrkbc"/>
+                        <events>
+                           <catch faultField="temp.s_Extract_Transfers/fault"
+                                  id="le5rrk89"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_Transfers/fault"
+                                  id="le5rrk8a"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5rrkbc">
+                        <service id="le5rrka8">
+                           <title>s_Extract_Users</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Extract_Users</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">8b95ZMDBQ5Nbj4GzjxtwIi</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Extract-Users">temp.s_Extract_Users</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Users/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Users[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Extract-Users/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Extract_Users[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Extract_Users/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Extract_Users/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/AnonymiseCustomerData">AnonymiseCustomerData</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/ParamAPIFilePrefix">ParamAPIFilePrefix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Users/inout/ParamAPIInterfaceIdentifier">ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/ParamAPITimestamp">ParamAPITimestamp</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/ParamAPIFooterFileSuffix">ParamAPIFooterFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/ParamAPIHeaderFileSuffix">ParamAPIHeaderFileSuffix</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/ParamAPIDataFileSuffix">ParamAPIDataFileSuffix</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Users/inout/DataAPIHeaderFooter_ParamAPIInterfaceIdentifier">DataAPIHeaderFooter_ParamAPIInterfaceIdentifier</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Users/inout/DataAPIHeaderFooter_ParamAPIFileVersion">DataAPIHeaderFooter_ParamAPIFileVersion</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Users/inout/DataAPIHeaderFooter_ParamProcessDate">DataAPIHeaderFooter_ParamProcessDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Extract_Users/inout/DataAPIHeaderFooter_ParamProcessRunID">DataAPIHeaderFooter_ParamProcessRunID</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Extract_Users/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Extract_Users/fault"
+                                  id="le5rrkba"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Extract_Users/fault"
+                                  id="le5rrkbb"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5rrj0v" targetId="le5rrj0q" type="containerLink"/>
+                  </flow>
+                  <link id="le5rrj0w" targetId="le5rrj0x" type="containerLink"/>
+                  <link id="le5rrj0t" targetId="le5rrj0u" type="containerLink"/>
+                  <link id="le5rrj0s" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-HeadAccounts"
+                              isByCopy="true"
+                              name="s-Extract-HeadAccounts">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-ScripTransactions"
+                              isByCopy="true"
+                              name="s-Extract-ScripTransactions">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-Orders"
+                              isByCopy="true"
+                              name="s-Extract-Orders">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-Organisation"
+                              isByCopy="true"
+                              name="s-Extract-Organisation">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-SubAccounts"
+                              isByCopy="true"
+                              name="s-Extract-SubAccounts">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-Batch"
+                              isByCopy="true"
+                              name="s-Extract-Batch">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-CashEntries"
+                              isByCopy="true"
+                              name="s-Extract-CashEntries">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-CashLedgerAdjustments"
+                              isByCopy="true"
+                              name="s-Extract-CashLedgerAdjustments">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-CMTTrans"
+                              isByCopy="true"
+                              name="s-Extract-CMTTrans">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-CorporateActions"
+                              isByCopy="true"
+                              name="s-Extract-CorporateActions">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-FRCs"
+                              isByCopy="true"
+                              name="s-Extract-FRCs">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-Instruments"
+                              isByCopy="true"
+                              name="s-Extract-Instruments">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-MCAs"
+                              isByCopy="true"
+                              name="s-Extract-MCAs">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-RegularWithdrawals"
+                              isByCopy="true"
+                              name="s-Extract-RegularWithdrawals">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-TradeFeesBreakdown"
+                              isByCopy="true"
+                              name="s-Extract-TradeFeesBreakdown">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-Trades"
+                              isByCopy="true"
+                              name="s-Extract-Trades">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-Transfers"
+                              isByCopy="true"
+                              name="s-Extract-Transfers">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-Users"
+                              isByCopy="true"
+                              name="s-Extract-Users">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Extract-CashLedgerTransactions"
+                              isByCopy="true"
+                              name="s-Extract-CashLedgerTransactions">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>9azeApVajSgcRN1yMi44Cj</types1:GUID>
+      <types1:DisplayName>wl_Extracts_API_Core</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:42:15.258Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

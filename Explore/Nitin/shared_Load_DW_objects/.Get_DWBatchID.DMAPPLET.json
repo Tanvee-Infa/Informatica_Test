@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "0ThvjH9prUKcSVgtw7ttUq",
+    "name" : "Get_DWBatchID",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR40000000000017"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Given Platform BatchID  SourceSystemID, return DW BatchID",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "jJXMBYHdw4kg4JQ5VkhuKP",
+    "name" : "IsNullEmptyStr",
+    "type" : "UDF",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR41000000000007"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "NULL",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/UDF/shared_Load_DW_objects"
+  } ]
+}

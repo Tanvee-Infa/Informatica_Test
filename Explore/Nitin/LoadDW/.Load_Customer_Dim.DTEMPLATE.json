@@ -1,0 +1,87 @@
+{
+  "objectInfo" : {
+    "id" : "4IO0dI0kIAvdHVxfs9rksW",
+    "name" : "Load_Customer_Dim",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR170000000000E7"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "7km75dtF6GLfKoXHAOtvWI",
+    "name" : "Get_DWUser_Dim_KeyFullName",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR4000000000000R"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Given platform UserID  SourceSystemID, return User_Dim_Key  FullName",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/INFA_SPRINT/shared_Load_DW_objects"
+  }, {
+    "id" : "aXeNOx3E5IzeHaOP9pUScs",
+    "name" : "Get_Date_Dim_Key",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR4000000000000J"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Get the Date Dimension Key.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/INFA_SPRINT/Load_DW"
+  }, {
+    "id" : "9zfzJBXpW0qlJImHMBrc8j",
+    "name" : "Get_Param_Details",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR4000000000000N"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/INFA_SPRINT/Load_DW"
+  } ]
+}

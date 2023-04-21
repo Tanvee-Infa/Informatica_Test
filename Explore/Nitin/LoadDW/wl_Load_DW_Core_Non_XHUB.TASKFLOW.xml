@@ -1,0 +1,265 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>93aaa-gt-12613118-2023-03-15T07:27:04.979Z::tf.xml</types1:EntryId>
+      <types1:Name>wl_Load_DW_Core_Non_XHUB</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>tanvee@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-03-15T07:27:05Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="wl_Load_DW_Core_Non_XHUB"
+                   name="wl_Load_DW_Core_Non_XHUB"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="ParamFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ParamFileDir" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="s_Load_Customer_Dim" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Customer-Dim</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_Market_Dim" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Market-Dim</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="le5s9lzx" targetId="le5s9m0o"/>
+               </start>
+               <eventContainer id="le5s9m0o">
+                  <service id="le5s9lzw">
+                     <title>s_Load_Market_Dim</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">s_Load_Market_Dim</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">2aCEc0RhMq9jFedVITnv2e</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="s-Load-Market-Dim">temp.s_Load_Market_Dim</operation>
+                           <operation source="constant"
+                                      to="s-Load-Market-Dim/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_Market_Dim[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="s-Load-Market-Dim/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_Market_Dim[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/inout/PMMappingName">PMMappingName</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/inout/PMWorkflowRunId">PMWorkflowRunId</operation>
+                        <operation source="field" to="temp.s_Load_Market_Dim/inout/PMWorkflowName">PMWorkflowName</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="le5s9lzy" targetId="le5s9lyf"/>
+                  <events>
+                     <catch faultField="temp.s_Load_Market_Dim/fault"
+                            id="le5s9m0m"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.s_Load_Market_Dim/fault"
+                            id="le5s9m0n"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="le5s9lyf">
+                  <service id="le5s9ly9">
+                     <title>s_Load_Customer_Dim</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">s_Load_Customer_Dim</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">ix0aEoj5D0ObEgyFPFa4IU</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="s-Load-Customer-Dim">temp.s_Load_Customer_Dim</operation>
+                           <operation source="constant"
+                                      to="s-Load-Customer-Dim/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_Customer_Dim[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="s-Load-Customer-Dim/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_Customer_Dim[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/inout/ParamGenerateDataAPI">ParamGenerateDataAPI</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/inout/CurrentCustomerDWKey">CurrentCustomerDWKey</operation>
+                        <operation source="field" to="temp.s_Load_Customer_Dim/inout/ParamStepComplete">ParamStepComplete</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_Customer_Dim/inout/SC_Get_Param_Details_APIResetExtract">SC_Get_Param_Details_APIResetExtract</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_Customer_Dim/inout/SC_Get_Param_Details_ParamAdminStepID">SC_Get_Param_Details_ParamAdminStepID</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="le5s9lyb" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.s_Load_Customer_Dim/fault"
+                            id="le5s9lyd"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.s_Load_Customer_Dim/fault"
+                            id="le5s9lye"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Customer-Dim"
+                              isByCopy="true"
+                              name="s-Load-Customer-Dim">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Market-Dim"
+                              isByCopy="true"
+                              name="s-Load-Market-Dim">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>9DhGoHXubFihrOdFO5mEC6</types1:GUID>
+      <types1:DisplayName>wl_Load_DW_Core_Non_XHUB</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:42:00.051Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,285 @@
+{
+  "objectInfo" : {
+    "id" : "3lPuy60Gh31geaY85hWkCD",
+    "name" : "mt_3800_CREATE_IICS_MAPPING_TASK_AXON_DQ",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0Z0000000000HT"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task to create or update IICS mapping task utilizing ctrl.object_catalog tabel data.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "cV5qJo1hmKVfcGW2KEMT6V",
+    "name" : "bs_IICS_CREATE_MTTASK",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR2700000000000U"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "01C1HR2800000000000V",
+        "value" : "cV5qJo1hmKVfcGW2KEMT6V@create_mttask"
+      } ],
+      "additionalInfo" : {
+        "description" : "Business service component to create IICS mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  }, {
+    "id" : "a2kaTjhNuSPgockTUYIOKK",
+    "name" : "hrs_IICS_CREATE_MTTASK_AXON_DQ",
+    "type" : "HSCHEMA",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR36000000000007"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Hierarchy schema for generating create IICS Axon DQ mapping task payload.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  }, {
+    "id" : "52Jf7rDQMnmj7Qa0wZn6Wr",
+    "name" : "rst_IICS_CREATE_MTTASK",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B00000000007C"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Rest V2 connection to create IICS mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "5KyXSFU4US5cVmJ9U6AoYh",
+    "name" : "FF_Axon_TGTFILES",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B000000000077"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "FF source in Axon\\TgtFiles folder",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "aIqiaFGYUPhlIghs9PbxUf",
+    "name" : "rst_IICS_LOGIN",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B00000000007E"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Rest API conncetion for IICS login.",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "8CRh0ZmfOoBeeeid7CZS2v",
+    "name" : "FF_E2E_TGTFILES",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B000000000079"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "FF source in Axon\\TgtFiles\\E2E folder",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "5XNEv1UzqIXcKQ1wpPohY7",
+    "name" : "Sql_AcqIQ_Work",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B00000000007D"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Sql connection to AcqIQ database work schema",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "57kSL0gxmoMdXJoAQG5wYJ",
+    "name" : "rst_IICS_FETCH_MTTASK_AXON_DQ",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B000000000078"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Rest API connection to fetch IICS AXON DQ mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "h18t4QM38E2lNubI0iomCg",
+    "name" : "Alex_SA_Windows_Shared",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR25000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "46aIQTlyGnolyaKNZ3mgI7",
+    "name" : "m_3800_CREATE_IICS_MAPPING_TASK_AXON_DQ",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR170000000000GY"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping to call IICS REST API to create or update a mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  }, {
+    "id" : "3nyq4GudqELgwmOlZtEQcs",
+    "name" : "Sql_AcqIQ_Ctrl",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B00000000007B"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Sql connection to AcqCare Ctrl schema",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "1NojwHpSYguhHl72kjwZ8e",
+    "name" : "bs_IICS_FETCH_MTTASK_AXON_DQ",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR2700000000000T"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "01C1HR2800000000000U",
+        "value" : "1NojwHpSYguhHl72kjwZ8e@fetchMttask"
+      } ],
+      "additionalInfo" : {
+        "description" : "Business service to fetch IICS AXON DQ mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  } ]
+}

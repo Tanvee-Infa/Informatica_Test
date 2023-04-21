@@ -1,0 +1,713 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>HHZp81V4AdypKwK-gt-12613138-2023-03-15T07:27:05.34Z::tf.xml</types1:EntryId>
+      <types1:Name>wl_Load_DW_Core_Inc_XHUB</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>tanvee@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-03-15T07:27:05Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="wl_Load_DW_Core_Inc_XHUB"
+                   name="wl_Load_DW_Core_Inc_XHUB"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="s_Load_Instrument_Dim" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Instrument-Dim</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_User_Dim" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-User-Dim</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_Batch_Dim" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-Batch-Dim</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_RegularWithdrawals_Dim"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-RegularWithdrawals-Dim</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_Account_Dim_Dist" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-Account-Dim-Dist</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="le5pbk08" targetId="le5pbk0y"/>
+               </start>
+               <eventContainer id="le5pbk0y">
+                  <service id="le5pbk07">
+                     <title>s_Load_Instrument_Dim</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">s_Load_Instrument_Dim</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">eARVLg61HSdbrzntwlHd0C</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="s-Load-Instrument-Dim">temp.s_Load_Instrument_Dim</operation>
+                           <operation source="constant"
+                                      to="s-Load-Instrument-Dim/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_Instrument_Dim[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="s-Load-Instrument-Dim/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_Instrument_Dim[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_Instrument_Dim/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_Instrument_Dim/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_Instrument_Dim/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_Instrument_Dim/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_Instrument_Dim/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                        <operation source="field" to="temp.s_Load_Instrument_Dim/inout/ParamStepComplete">ParamStepComplete</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="le5pbk6q" targetId="le5pbk6p"/>
+                  <events>
+                     <catch faultField="temp.s_Load_Instrument_Dim/fault"
+                            id="le5pbk0w"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.s_Load_Instrument_Dim/fault"
+                            id="le5pbk0x"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="le5pbk6p" type="exclusive">
+                  <title>Decision 1</title>
+                  <flow id="lewta0g8">
+                     <eventContainer id="lewta0ht">
+                        <service id="lewta0gx">
+                           <title>s_Load_User_Dim</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_User_Dim</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1SyWGH4388OiiTlSWwzH0E</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-User-Dim">temp.s_Load_User_Dim</operation>
+                                 <operation source="constant"
+                                            to="s-Load-User-Dim/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_User_Dim[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-User-Dim/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_User_Dim[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field" to="temp.s_Load_User_Dim/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="lewta0om" targetId="lewta0nj"/>
+                        <events>
+                           <catch faultField="temp.s_Load_User_Dim/fault"
+                                  id="le5pbk2w"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_User_Dim/fault"
+                                  id="le5pbk2x"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <container id="lewta0nj" type="exclusive">
+                        <title>Decision 2</title>
+                        <flow id="lewta0nk">
+                           <eventContainer id="lewta0nl">
+                              <service id="lewta0nm">
+                                 <title>s_Load_Organisation_Dim</title>
+                                 <serviceName>ICSExecuteDataTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">s_Load_Organisation_Dim</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">0LzBOh9YSTigGBYoXVOR4c</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                    <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="s-Load-Organisation-Dim">temp.s_Load_Organisation_Dim</operation>
+                                       <operation source="constant"
+                                                  to="s-Load-Organisation-Dim/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                       <operation source="constant"
+                                                  to="temp.s_Load_Organisation_Dim[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                       <operation source="constant"
+                                                  to="s-Load-Organisation-Dim/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                       <operation source="constant"
+                                                  to="temp.s_Load_Organisation_Dim[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/Object_Name">Object Name</operation>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/Log_Id">Log Id</operation>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/Task_Id">Task Id</operation>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/Task_Status">Task Status</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_Organisation_Dim/output/Success_Source_Rows">Success Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_Organisation_Dim/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_Organisation_Dim/output/Success_Target_Rows">Success Target Rows</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_Organisation_Dim/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/End_Time">End Time</operation>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/Error_Message">Error Message</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_Organisation_Dim/output/TotalTransErrors">Total Transformation Errors</operation>
+                                    <operation source="field" to="temp.s_Load_Organisation_Dim/output/FirstErrorCode">First Error Code</operation>
+                                    <operation source="field"
+                                               to="temp.s_Load_Organisation_Dim/inout/ParamStepComplete">ParamStepComplete</operation>
+                                 </serviceOutput>
+                              </service>
+                              <link id="lewta0o6" targetId="lewta0nn"/>
+                              <events>
+                                 <catch faultField="temp.s_Load_Organisation_Dim/fault"
+                                        id="le5pbk4v"
+                                        interrupting="true"
+                                        name="error">
+                                    <suspend/>
+                                 </catch>
+                                 <catch faultField="temp.s_Load_Organisation_Dim/fault"
+                                        id="le5pbk4w"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <container id="lewta0nn" type="exclusive">
+                              <title>Decision 3</title>
+                              <flow id="lewta0no">
+                                 <eventContainer id="lewuqrjz">
+                                    <service id="lewuqriz">
+                                       <title>s_Load_Account_Dim_Dist</title>
+                                       <serviceName>ICSExecuteDataTask</serviceName>
+                                       <serviceGUID/>
+                                       <serviceInput>
+                                          <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                          <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                          <parameter name="Task Name" source="constant" updatable="true">s_Load_Account_Dim_Dist</parameter>
+                                          <parameter name="GUID" source="constant" updatable="true">hR1NRF7rlMykYAqH9TPLea</parameter>
+                                          <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                          <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                                          <parameter name="taskField" source="nested">
+                                             <operation source="field" to="s-Load-Account-Dim-Dist">temp.s_Load_Account_Dim_Dist</operation>
+                                             <operation source="constant"
+                                                        to="s-Load-Account-Dim-Dist/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                             <operation source="constant"
+                                                        to="temp.s_Load_Account_Dim_Dist[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                             <operation source="constant"
+                                                        to="s-Load-Account-Dim-Dist/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                             <operation source="constant"
+                                                        to="temp.s_Load_Account_Dim_Dist[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                          </parameter>
+                                       </serviceInput>
+                                       <serviceOutput>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/Object_Name">Object Name</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/Run_Id">Run Id</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/Log_Id">Log Id</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/Task_Id">Task Id</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/Task_Status">Task Status</operation>
+                                          <operation source="field"
+                                                     to="temp.s_Load_Account_Dim_Dist/output/Success_Source_Rows">Success Source Rows</operation>
+                                          <operation source="field"
+                                                     to="temp.s_Load_Account_Dim_Dist/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                          <operation source="field"
+                                                     to="temp.s_Load_Account_Dim_Dist/output/Success_Target_Rows">Success Target Rows</operation>
+                                          <operation source="field"
+                                                     to="temp.s_Load_Account_Dim_Dist/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/Start_Time">Start Time</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/End_Time">End Time</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/Error_Message">Error Message</operation>
+                                          <operation source="field"
+                                                     to="temp.s_Load_Account_Dim_Dist/output/TotalTransErrors">Total Transformation Errors</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/output/FirstErrorCode">First Error Code</operation>
+                                          <operation source="field"
+                                                     to="temp.s_Load_Account_Dim_Dist/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                                          <operation source="field"
+                                                     to="temp.s_Load_Account_Dim_Dist/inout/ParamStepComplete">ParamStepComplete</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/inout/PMMappingName">PMMappingName</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/inout/PMWorkflowRunId">PMWorkflowRunId</operation>
+                                          <operation source="field" to="temp.s_Load_Account_Dim_Dist/inout/PMWorkflowName">PMWorkflowName</operation>
+                                       </serviceOutput>
+                                    </service>
+                                    <link id="lewuqrj0" targetId="lewta0nr"/>
+                                    <events>
+                                       <catch faultField="temp.s_Load_Account_Dim_Dist/fault"
+                                              id="le5pbkam"
+                                              interrupting="true"
+                                              name="error">
+                                          <suspend/>
+                                       </catch>
+                                       <catch faultField="temp.s_Load_Account_Dim_Dist/fault"
+                                              id="le5pbkan"
+                                              interrupting="true"
+                                              name="warning"/>
+                                    </events>
+                                 </eventContainer>
+                                 <container id="lewta0nr" type="exclusive">
+                                    <title>Decision 4</title>
+                                    <flow id="lewta0ns">
+                                       <eventContainer id="lewuqrfd">
+                                          <service id="lewuqreg">
+                                             <title>s_Load_RegularWithdrawals_Dim</title>
+                                             <serviceName>ICSExecuteDataTask</serviceName>
+                                             <serviceGUID/>
+                                             <serviceInput>
+                                                <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                                <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                                <parameter name="Task Name" source="constant" updatable="true">s_Load_RegularWithdrawals_Dim</parameter>
+                                                <parameter name="GUID" source="constant" updatable="true">0tWmWif0xOSk13sAPbuwon</parameter>
+                                                <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                                <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                                                <parameter name="taskField" source="nested">
+                                                   <operation source="field" to="s-Load-RegularWithdrawals-Dim">temp.s_Load_RegularWithdrawals_Dim</operation>
+                                                   <operation source="constant"
+                                                              to="s-Load-RegularWithdrawals-Dim/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                                   <operation source="constant"
+                                                              to="temp.s_Load_RegularWithdrawals_Dim[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                                   <operation source="constant"
+                                                              to="s-Load-RegularWithdrawals-Dim/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                                   <operation source="constant"
+                                                              to="temp.s_Load_RegularWithdrawals_Dim[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                                </parameter>
+                                             </serviceInput>
+                                             <serviceOutput>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/Object_Name">Object Name</operation>
+                                                <operation source="field" to="temp.s_Load_RegularWithdrawals_Dim/output/Run_Id">Run Id</operation>
+                                                <operation source="field" to="temp.s_Load_RegularWithdrawals_Dim/output/Log_Id">Log Id</operation>
+                                                <operation source="field" to="temp.s_Load_RegularWithdrawals_Dim/output/Task_Id">Task Id</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/Task_Status">Task Status</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/Success_Source_Rows">Success Source Rows</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/Success_Target_Rows">Success Target Rows</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/Start_Time">Start Time</operation>
+                                                <operation source="field" to="temp.s_Load_RegularWithdrawals_Dim/output/End_Time">End Time</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/Error_Message">Error Message</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/TotalTransErrors">Total Transformation Errors</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/output/FirstErrorCode">First Error Code</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/inout/ParamStepComplete">ParamStepComplete</operation>
+                                                <operation source="field"
+                                                           to="temp.s_Load_RegularWithdrawals_Dim/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                                             </serviceOutput>
+                                          </service>
+                                          <link id="lewuqrin" targetId="lewta0nv"/>
+                                          <events>
+                                             <catch faultField="temp.s_Load_RegularWithdrawals_Dim/fault"
+                                                    id="le5pbkf2"
+                                                    interrupting="true"
+                                                    name="error">
+                                                <suspend/>
+                                             </catch>
+                                             <catch faultField="temp.s_Load_RegularWithdrawals_Dim/fault"
+                                                    id="le5pbkf3"
+                                                    interrupting="true"
+                                                    name="warning"/>
+                                          </events>
+                                       </eventContainer>
+                                       <container id="lewta0nv" type="exclusive">
+                                          <title>Decision 5</title>
+                                          <flow id="lewta0nw">
+                                             <eventContainer id="lewuqrc0">
+                                                <service id="lewuqrb4">
+                                                   <title>s_Load_Batch_Dim</title>
+                                                   <serviceName>ICSExecuteDataTask</serviceName>
+                                                   <serviceGUID/>
+                                                   <serviceInput>
+                                                      <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                                      <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                                      <parameter name="Task Name" source="constant" updatable="true">s_Load_Batch_Dim</parameter>
+                                                      <parameter name="GUID" source="constant" updatable="true">1RsPvWgb0KodlO8V5Ladma</parameter>
+                                                      <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                                      <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                                                      <parameter name="taskField" source="nested">
+                                                         <operation source="field" to="s-Load-Batch-Dim">temp.s_Load_Batch_Dim</operation>
+                                                         <operation source="constant"
+                                                                    to="s-Load-Batch-Dim/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                                         <operation source="constant"
+                                                                    to="temp.s_Load_Batch_Dim[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                                         <operation source="constant"
+                                                                    to="s-Load-Batch-Dim/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                                         <operation source="constant"
+                                                                    to="temp.s_Load_Batch_Dim[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                                      </parameter>
+                                                   </serviceInput>
+                                                   <serviceOutput>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Object_Name">Object Name</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Run_Id">Run Id</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Log_Id">Log Id</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Task_Id">Task Id</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Task_Status">Task Status</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Success_Source_Rows">Success Source Rows</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Success_Target_Rows">Success Target Rows</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Start_Time">Start Time</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/End_Time">End Time</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/Error_Message">Error Message</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/TotalTransErrors">Total Transformation Errors</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/output/FirstErrorCode">First Error Code</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                                                      <operation source="field" to="temp.s_Load_Batch_Dim/inout/ParamXhubSourceSystemID">ParamXhubSourceSystemID</operation>
+                                                   </serviceOutput>
+                                                </service>
+                                                <events>
+                                                   <catch faultField="temp.s_Load_Batch_Dim/fault"
+                                                          id="le5pbkhq"
+                                                          interrupting="true"
+                                                          name="error">
+                                                      <suspend/>
+                                                   </catch>
+                                                   <catch faultField="temp.s_Load_Batch_Dim/fault"
+                                                          id="le5pbkhr"
+                                                          interrupting="true"
+                                                          name="warning"/>
+                                                </events>
+                                             </eventContainer>
+                                             <link id="lewta0oh" targetId="lewta0nv" type="containerLink"/>
+                                          </flow>
+                                          <flow id="lewta0nz">
+                                             <link id="lewta0oi" targetId="lewta0nv" type="containerLink"/>
+                                          </flow>
+                                          <link id="lewta0of" targetId="lewta0nw" type="containerLink">
+                                             <condition source="formula">
+                                                <function name="string-equals">
+                                                   <arg name="left">{$temp.s_Load_RegularWithdrawals_Dim[1]/output[1]/Task_Status}</arg>
+                                                   <arg name="right">1</arg>
+                                                </function>
+                                             </condition>
+                                          </link>
+                                          <link id="lewta0og" targetId="lewta0nz" type="containerLink"/>
+                                       </container>
+                                       <link id="lewta0od" targetId="lewta0nr" type="containerLink"/>
+                                    </flow>
+                                    <flow id="lewta0o0">
+                                       <link id="lewta0oj" targetId="lewta0nr" type="containerLink"/>
+                                    </flow>
+                                    <link id="lewta0ob" targetId="lewta0ns" type="containerLink">
+                                       <condition source="formula">
+                                          <function name="string-equals">
+                                             <arg name="left">{$temp.s_Load_Account_Dim_Dist[1]/output[1]/Task_Status}</arg>
+                                             <arg name="right">1</arg>
+                                          </function>
+                                       </condition>
+                                    </link>
+                                    <link id="lewta0oc" targetId="lewta0o0" type="containerLink"/>
+                                 </container>
+                                 <link id="lewta0o9" targetId="lewta0nn" type="containerLink"/>
+                              </flow>
+                              <flow id="lewta0o1">
+                                 <link id="lewta0ok" targetId="lewta0nn" type="containerLink"/>
+                              </flow>
+                              <link id="lewta0o7" targetId="lewta0no" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="string-equals">
+                                       <arg name="left">{$temp.s_Load_Account_Dim_Dist[1]/output[1]/Task_Status}</arg>
+                                       <arg name="right">1</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="lewta0o8" targetId="lewta0o1" type="containerLink"/>
+                           </container>
+                           <link id="lewta0o5" targetId="lewta0nj" type="containerLink"/>
+                        </flow>
+                        <flow id="lewta0o2">
+                           <link id="lewta0ol" targetId="lewta0nj" type="containerLink"/>
+                        </flow>
+                        <link id="lewta0o3" targetId="lewta0nk" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$temp.s_Load_User_Dim[1]/output[1]/Task_Status}</arg>
+                                 <arg name="right">1</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lewta0o4" targetId="lewta0o2" type="containerLink"/>
+                     </container>
+                     <link id="lewta0g9" targetId="le5pbk6p" type="containerLink"/>
+                  </flow>
+                  <flow id="lewta0ga">
+                     <link id="lewta0gb" targetId="le5pbk6p" type="containerLink"/>
+                  </flow>
+                  <link id="lewta0g6" targetId="lewta0g8" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.s_Load_Instrument_Dim[1]/output[1]/Task_Status}</arg>
+                           <arg name="right">1</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lewta0g7" targetId="lewta0ga" type="containerLink"/>
+                  <link id="lewta0ng" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Instrument-Dim"
+                              isByCopy="true"
+                              name="s-Load-Instrument-Dim">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-User-Dim"
+                              isByCopy="true"
+                              name="s-Load-User-Dim">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Batch-Dim"
+                              isByCopy="true"
+                              name="s-Load-Batch-Dim">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-RegularWithdrawals-Dim"
+                              isByCopy="true"
+                              name="s-Load-RegularWithdrawals-Dim">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Account-Dim-Dist"
+                              isByCopy="true"
+                              name="s-Load-Account-Dim-Dist">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>axwUcsUVRtDdLyWPnnsIO6</types1:GUID>
+      <types1:DisplayName>wl_Load_DW_Core_Inc_XHUB</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:42:15.395Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

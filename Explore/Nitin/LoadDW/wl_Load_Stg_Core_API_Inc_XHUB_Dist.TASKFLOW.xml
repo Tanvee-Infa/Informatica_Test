@@ -1,0 +1,1534 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>IECGiWK7vNljLYq-gt-12612737-2023-03-15T07:26:39.561Z::tf.xml</types1:EntryId>
+      <types1:Name>wl_Load_Stg_Core_API_Inc_XHUB_Dist</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>tanvee@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-03-15T07:26:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="wl_Load_Stg_Core_API_Inc_XHUB_Dist"
+                   name="wl_Load_Stg_Core_API_Inc_XHUB_Dist"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="ParamLoadCMTAccruedInteres" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ParamFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ParamFileDir" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description=""
+                      name="s_Load_stg_CashLedgerTransactions"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:s-Load-stg-CashLedgerTransactions</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_CashEntries" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-CashEntries</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_CashLedgerAdjustments"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-CashLedgerAdjustments</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_CMTTrans" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-CMTTrans</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_FRCs" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-FRCs</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_RIACSchedules" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-RIACSchedules</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_Orders" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-Orders</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_ScripTransactions" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-ScripTransactions</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_Batch" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-Batch</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_Trades" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-Trades</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_TradesFeesBreakdown"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-TradesFeesBreakdown</option>
+                  </options>
+               </field>
+               <field description="" name="s_Load_stg_Transfers" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-Transfers</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_CMTAccruedInterest"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-CMTAccruedInterest</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="le5ihjhu" targetId="le5ihjhn"/>
+               </start>
+               <container id="le5ihjhn" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="le5ihjho">
+                     <eventContainer id="le5ihk67">
+                        <service id="le5ihk61">
+                           <title>s_Load_stg_CashLedgerTransactions</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_CashLedgerTransactions</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">faEepkQqbaLeTapCWQHcyW</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-CashLedgerTransactions">temp.s_Load_stg_CashLedgerTransactions</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-CashLedgerTransactions/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_CashLedgerTransactions[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-CashLedgerTransactions/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_CashLedgerTransactions[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/inout/CLT_MaxHistID">CLT_MaxHistID</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashLedgerTransactions/inout/MAXID">MAXID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerTransactions/inout/ParamMovementSource">ParamMovementSource</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_CashLedgerTransactions/fault"
+                                  id="le5ihk65"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_CashLedgerTransactions/fault"
+                                  id="le5ihk66"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5ihk5w" targetId="le5ihjhn" type="containerLink"/>
+                  </flow>
+                  <flow id="le5ihjhp">
+                     <eventContainer id="le5ihk7m">
+                        <service id="le5ihk6b">
+                           <title>s_Load_stg_CashEntries</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_CashEntries</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">2PtvnmdEpkYfnT2f7rmKG1</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-CashEntries">temp.s_Load_stg_CashEntries</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-CashEntries/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_CashEntries[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-CashEntries/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_CashEntries[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/inout/MAXID">MAXID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/CashEntry_MaxLastModifiedDate">CashEntry_MaxLastModifiedDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/CashEntry_MaxLastModifiedDate_ConvertToStr">CashEntry_MaxLastModifiedDate_ConvertToStr</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/inout/ParamAdviceType">ParamAdviceType</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamDiscretionGranted">ParamDiscretionGranted</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/inout/ParamIsAVC">ParamIsAVC</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamSourceOfWealth">ParamSourceOfWealth</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamIncomeBeforeTax">ParamIncomeBeforeTax</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/inout/ParamOccupation">ParamOccupation</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamImmediateTaxFreeCashRequest">ParamImmediateTaxFreeCashRequest</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamPaymentReason">ParamPaymentReason</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamReceiptReason">ParamReceiptReason</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamConsiderForCRSFATCAReporting">ParamConsiderForCRSFATCAReporting</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamPooledCashExpectationId">ParamPooledCashExpectationId</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamIsPoolExpectation">ParamIsPoolExpectation</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamOccupationOther">ParamOccupationOther</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/inout/ParamEmployerName">ParamEmployerName</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamEmployerStatus">ParamEmployerStatus</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamBedAndProductCompletion">ParamBedAndProductCompletion</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamImmediateTaxFreeCashRequestJoin">ParamImmediateTaxFreeCashRequestJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamPaymentReceiptReasonJoin">ParamPaymentReceiptReasonJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashEntries/inout/ParamBedAndProductCompletionJoin">ParamBedAndProductCompletionJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/inout/ParamStepComplete">ParamStepComplete</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashEntries/inout/ParamLASTID">ParamLASTID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihk7s" targetId="le5ihk8j"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_CashEntries/fault"
+                                  id="le2xyvbr"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_CashEntries/fault"
+                                  id="le2xyvbs"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihk8j">
+                        <service id="le5ihk7r">
+                           <title>s_Load_stg_CashLedgerAdjustments</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_CashLedgerAdjustments</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">fBqOcqS7MsbddjlWARijqt</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-CashLedgerAdjustments">temp.s_Load_stg_CashLedgerAdjustments</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-CashLedgerAdjustments/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_CashLedgerAdjustments[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-CashLedgerAdjustments/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_CashLedgerAdjustments[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashLedgerAdjustments/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashLedgerAdjustments/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_stg_CashLedgerAdjustments/inout/MAXID">MAXID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/inout/CLA_MaxHistID">CLA_MaxHistID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/inout/ParamLASTID">ParamLASTID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/inout/ParamStepComplete">ParamStepComplete</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CashLedgerAdjustments/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihk8p" targetId="le5ihk9i"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_CashLedgerAdjustments/fault"
+                                  id="le2xyveg"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_CashLedgerAdjustments/fault"
+                                  id="le2xyveh"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihk9i">
+                        <service id="le5ihk8o">
+                           <title>s_Load_stg_CMTTrans</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_CMTTrans</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7guuXPJbBcjhIH7AS8APYt</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-CMTTrans">temp.s_Load_stg_CMTTrans</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-CMTTrans/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_CMTTrans[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-CMTTrans/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_CMTTrans[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CMTTrans/inout/CMT_MaxLastModifiedDate">CMT_MaxLastModifiedDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CMTTrans/inout/CMT_MaxLastModifiedDate_ConvertToStr">CMT_MaxLastModifiedDate_ConvertToStr</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/inout/MAXID">MAXID</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/inout/ParamLASTID">ParamLASTID</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                              <operation source="field" to="temp.s_Load_stg_CMTTrans/inout/ParamStepComplete">ParamStepComplete</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_CMTTrans/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihk9o" targetId="le5ihkal"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_CMTTrans/fault"
+                                  id="le40gmwn"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_CMTTrans/fault"
+                                  id="le40gmwo"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihkal">
+                        <service id="le5ihk9n">
+                           <title>s_Load_stg_FRCs</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_FRCs</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">fpS0ppZGEi5ibByNncACKD</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-FRCs">temp.s_Load_stg_FRCs</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-FRCs/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_FRCs[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-FRCs/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_FRCs[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/inout/MAXID">MAXID</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/inout/FRC_MaxLastModifiedDate">FRC_MaxLastModifiedDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_FRCs/inout/FRC_MaxLastModifiedDate_ConvertToStr">FRC_MaxLastModifiedDate_ConvertToStr</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/inout/ParamClawBackAuditID">ParamClawBackAuditID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_FRCs/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_FRCs/inout/ParamARLISOCurrencyCodeJoin">ParamARLISOCurrencyCodeJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/inout/ParamStatusJoin">ParamStatusJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/inout/ParamARLISOCurrencyCode">ParamARLISOCurrencyCode</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/inout/ParamStatus">ParamStatus</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/inout/ParamLASTID">ParamLASTID</operation>
+                              <operation source="field" to="temp.s_Load_stg_FRCs/inout/ParamStepComplete">ParamStepComplete</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihkar" targetId="le5ihkbc"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_FRCs/fault"
+                                  id="le40gmz2"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_FRCs/fault"
+                                  id="le40gmz3"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihkbc">
+                        <service id="le5ihkaq">
+                           <title>s_Load_stg_RIACSchedules</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_RIACSchedules</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">9blK8mJ2fSjdQmFh0P9um1</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-RIACSchedules">temp.s_Load_stg_RIACSchedules</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-RIACSchedules/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_RIACSchedules[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-RIACSchedules/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_RIACSchedules[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_RIACSchedules/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_RIACSchedules/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_RIACSchedules/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_RIACSchedules/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_RIACSchedules/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_stg_RIACSchedules/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihkbi" targetId="le5ihkc9"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_RIACSchedules/fault"
+                                  id="le40gn0z"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_RIACSchedules/fault"
+                                  id="le40gn10"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihkc9">
+                        <service id="le5ihkbh">
+                           <title>s_Load_stg_Orders</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Orders</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">0aOKfkqBjmac4412QVLDCN</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-Orders">temp.s_Load_stg_Orders</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Orders/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Orders[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Orders/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Orders[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/inout/OC_MaxLastModifiedDate">OC_MaxLastModifiedDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Orders/inout/OC_MaxLastModifiedDate_ConvertToStr">OC_MaxLastModifiedDate_ConvertToStr</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/inout/MAXID">MAXID</operation>
+                              <operation source="field" to="temp.s_Load_stg_Orders/inout/ParamBTTT">ParamBTTT</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Orders/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihkl8" targetId="le5ihkm4"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_Orders/fault"
+                                  id="le40gn28"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_Orders/fault"
+                                  id="le40gn29"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihkm4">
+                        <service id="le5ihkl7">
+                           <title>s_Load_stg_ScripTransactions</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_ScripTransactions</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">9TMToky3g8EcW8Jk9VN3iY</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-ScripTransactions">temp.s_Load_stg_ScripTransactions</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-ScripTransactions/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_ScripTransactions[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-ScripTransactions/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_ScripTransactions[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_ScripTransactions/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_ScripTransactions/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_ScripTransactions/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_ScripTransactions/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_ScripTransactions/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_stg_ScripTransactions/inout/MAXID">MAXID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/ST_MaxHistID">ST_MaxHistID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/ParamSettlementDate">ParamSettlementDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/ParamStepComplete">ParamStepComplete</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/ParamSettlementDateJoin">ParamSettlementDateJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/ParamTransHistQuery3">ParamTransHistQuery3</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/ParamTransHistQuery2">ParamTransHistQuery2</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ScripTransactions/inout/ParamTransHistQuery1">ParamTransHistQuery1</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihkma" targetId="le5ihknl"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_ScripTransactions/fault"
+                                  id="le40gn9u"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_ScripTransactions/fault"
+                                  id="le40gn9v"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihknl">
+                        <service id="le5ihkm9">
+                           <title>s_Load_stg_Batch</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Batch</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">9NUGFsnEgnSj5mZ47BaVOQ</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-Batch">temp.s_Load_stg_Batch</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Batch/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Batch[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Batch/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Batch[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/MAXID">MAXID</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/BCL_MaxBatchChangeLogId">BCL_MaxBatchChangeLogId</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamAdviceGiven">ParamAdviceGiven</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamJoinInstructorId">ParamJoinInstructorId</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamJoinInstructorId2">ParamJoinInstructorId2</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamJoinDecisionMakerTypes">ParamJoinDecisionMakerTypes</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamRiskQuestionnaireInstructionIdJoin">ParamRiskQuestionnaireInstructionIdJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamRiskQuestionnaireInstructionIdJoin2">ParamRiskQuestionnaireInstructionIdJoin2</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamRiskQuestionnaireInstructionIdJoin3">ParamRiskQuestionnaireInstructionIdJoin3</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamRiskQuestionnaireInstructionIdJoin4">ParamRiskQuestionnaireInstructionIdJoin4</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamSubmittedWithdrawalInstructionsJoin">ParamSubmittedWithdrawalInstructionsJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamSubmittedInternalCashTransferInstructionsJoin">ParamSubmittedInternalCashTransferInstructionsJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamSubmittedBeneficiaryWithdrawalInstructionsJoin">ParamSubmittedBeneficiaryWithdrawalInstructionsJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamSubmittedDepositInstructionsJoin">ParamSubmittedDepositInstructionsJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamClerkIdJoin1">ParamClerkIdJoin1</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamClerkIdJoin2">ParamClerkIdJoin2</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamClerkIdJoin3">ParamClerkIdJoin3</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamLASTID">ParamLASTID</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamStepComplete">ParamStepComplete</operation>
+                              <operation source="field" to="temp.s_Load_stg_Batch/inout/ParamClerkId">ParamClerkId</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamSubmittedDepositInstructions">ParamSubmittedDepositInstructions</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamSubmittedBeneficiaryWithdrawalInstructions">ParamSubmittedBeneficiaryWithdrawalInstructions</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamSubmittedInternalCashTransferInstructions">ParamSubmittedInternalCashTransferInstructions</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Batch/inout/ParamSubmittedWithdrawalInstructions">ParamSubmittedWithdrawalInstructions</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="lf2bdz8u" targetId="le5ihkpu"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_Batch/fault"
+                                  id="le5e94i1"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_Batch/fault"
+                                  id="le5e94i2"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihkpu">
+                        <service id="le5ihkom">
+                           <title>s_Load_stg_Trades</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Trades</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">dbXK51DFLiVikdocX7H1kV</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-Trades">temp.s_Load_stg_Trades</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Trades/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Trades[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Trades/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Trades[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/T_MaxLastModifiedDate_ConvertToStr">T_MaxLastModifiedDate_ConvertToStr</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/T_MaxLastModifiedDate">T_MaxLastModifiedDate</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/MAXID">MAXID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/ParamAggregationParentID">ParamAggregationParentID</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamBrokerCode">ParamBrokerCode</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamExecutedPrice">ParamExecutedPrice</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamWaiverTypeId">ParamWaiverTypeId</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamLiquidityTypeId">ParamLiquidityTypeId</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/ParamBrokerTradeExecutionSystem">ParamBrokerTradeExecutionSystem</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/ParamBrokerTradeTradingCapacity">ParamBrokerTradeTradingCapacity</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamDealerAlgo">ParamDealerAlgo</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamBrokerI">ParamBrokerI</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/ParamTradeToParentAggregationID">ParamTradeToParentAggregationID</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamBrokersJOIN">ParamBrokersJOIN</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/ParamFixedIncomeTradesJoin">ParamFixedIncomeTradesJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamBrokerTradesJoin">ParamBrokerTradesJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/ParamBrokerTradeExecutionSystemJoin">ParamBrokerTradeExecutionSystemJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Trades/inout/ParamBrokerTradeTradingCapacityJoin">ParamBrokerTradeTradingCapacityJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamLASTID">ParamLASTID</operation>
+                              <operation source="field" to="temp.s_Load_stg_Trades/inout/ParamStepComplete">ParamStepComplete</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihkq0" targetId="le5ihkqs"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_Trades/fault"
+                                  id="le5e94m9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_Trades/fault"
+                                  id="le5e94ma"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihkqs">
+                        <service id="le5ihkpz">
+                           <title>s_Load_stg_TradesFeesBreakdown</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_TradesFeesBreakdown</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">ee32XdTQxW5dagxy17sI0O</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-TradesFeesBreakdown">temp.s_Load_stg_TradesFeesBreakdown</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-TradesFeesBreakdown/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_TradesFeesBreakdown[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-TradesFeesBreakdown/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_TradesFeesBreakdown[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_TradesFeesBreakdown/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_TradesFeesBreakdown/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_TradesFeesBreakdown/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_TradesFeesBreakdown/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/inout/ParamCcyCode">ParamCcyCode</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/inout/LKPTradeFeesBreakdown_Lookup_Source_Filter_param">LKPTradeFeesBreakdown_Lookup_Source_Filter_param</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_TradesFeesBreakdown/inout/ParamStepComplete">ParamStepComplete</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="le5ihkqy" targetId="le5ihks7"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_TradesFeesBreakdown/fault"
+                                  id="le5e94oq"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_TradesFeesBreakdown/fault"
+                                  id="le5e94or"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="le5ihks7">
+                        <service id="le5ihkqx">
+                           <title>s_Load_stg_Transfers</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Transfers</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">0C0v7lPoitlfjxgfGpT9w2</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-Transfers">temp.s_Load_stg_Transfers</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Transfers/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Transfers[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Transfers/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Transfers[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/inout/MAXID">MAXID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/Transfer_MaxLastModifiedDate">Transfer_MaxLastModifiedDate</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/Transfer_MaxLastModifiedDate_ConvertToStr">Transfer_MaxLastModifiedDate_ConvertToStr</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamFullOrPartialTransfer">ParamFullOrPartialTransfer</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamIsTransferBenefitPension">ParamIsTransferBenefitPension</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamImmediateTaxFreeCashRequestId">ParamImmediateTaxFreeCashRequestId</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamConsiderForCRSFATCAReporting">ParamConsiderForCRSFATCAReporting</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamPensionSchemeTaxReferenceNumber">ParamPensionSchemeTaxReferenceNumber</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/inout/ParamCedingType">ParamCedingType</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/inout/ParamPersonName">ParamPersonName</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamPersonalRecommendationv">ParamPersonalRecommendationv</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamTransferAdvised">ParamTransferAdvised</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamExternalTransferInstructionId">ParamExternalTransferInstructionId</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamImmediateTaxFreeCashRequestIdJoin1">ParamImmediateTaxFreeCashRequestIdJoin1</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamImmediateTaxFreeCashRequestIdJoin2">ParamImmediateTaxFreeCashRequestIdJoin2</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamScripTransferRequestAdviceJoin">ParamScripTransferRequestAdviceJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/inout/ParamCedingTypeJoin">ParamCedingTypeJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/inout/ParamPersonNameJoin">ParamPersonNameJoin</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamSubmittedExternalTransferInstructionsJoin">ParamSubmittedExternalTransferInstructionsJoin</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/inout/ParamLASTID">ParamLASTID</operation>
+                              <operation source="field" to="temp.s_Load_stg_Transfers/inout/ParamStepComplete">ParamStepComplete</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/ParamExternalProviderAddress4">ParamExternalProviderAddress4</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Transfers/inout/SC_Get_ParamFromStepID_APIResetExtract">SC_Get_ParamFromStepID_APIResetExtract</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_Transfers/fault"
+                                  id="le5e94qd"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_Transfers/fault"
+                                  id="le5e94qe"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5ihjht" targetId="le5ihjhn" type="containerLink"/>
+                  </flow>
+                  <link id="le5ihjhq" targetId="le5ihjho" type="containerLink"/>
+                  <link id="le5ihjhr" targetId="le5ihjhp" type="containerLink"/>
+                  <link id="le5ihkqw" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-CashLedgerTransactions"
+                              isByCopy="true"
+                              name="s-Load-stg-CashLedgerTransactions">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-CashEntries"
+                              isByCopy="true"
+                              name="s-Load-stg-CashEntries">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-CashLedgerAdjustments"
+                              isByCopy="true"
+                              name="s-Load-stg-CashLedgerAdjustments">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-CMTTrans"
+                              isByCopy="true"
+                              name="s-Load-stg-CMTTrans">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-FRCs"
+                              isByCopy="true"
+                              name="s-Load-stg-FRCs">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-RIACSchedules"
+                              isByCopy="true"
+                              name="s-Load-stg-RIACSchedules">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Orders"
+                              isByCopy="true"
+                              name="s-Load-stg-Orders">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-ScripTransactions"
+                              isByCopy="true"
+                              name="s-Load-stg-ScripTransactions">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Batch"
+                              isByCopy="true"
+                              name="s-Load-stg-Batch">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Trades"
+                              isByCopy="true"
+                              name="s-Load-stg-Trades">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-TradesFeesBreakdown"
+                              isByCopy="true"
+                              name="s-Load-stg-TradesFeesBreakdown">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Transfers"
+                              isByCopy="true"
+                              name="s-Load-stg-Transfers">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-CMTAccruedInterest"
+                              isByCopy="true"
+                              name="s-Load-stg-CMTAccruedInterest">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>74bW5AXXOsJbVlwbAGQ54p</types1:GUID>
+      <types1:DisplayName>wl_Load_Stg_Core_API_Inc_XHUB_Dist</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:42:15.29Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

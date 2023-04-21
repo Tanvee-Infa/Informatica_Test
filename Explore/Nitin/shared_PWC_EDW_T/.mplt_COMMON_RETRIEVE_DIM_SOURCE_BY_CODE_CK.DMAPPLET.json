@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "3WtbJZ2ZSt0fSzgZVvSDgr",
+    "name" : "mplt_COMMON_RETRIEVE_DIM_SOURCE_BY_CODE_CK",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR4000000000000F"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Created By:  Patrick Kirkes\r\nDate:               July 2007\r\nScope:           General\r\nFunction:        Retrieves the Source Dim CK by using the Source Code, instead of the Source Description.  This mapplet will retrieve the correct Source Dim CK or assign one of the defaults based upon data inputs.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ ]
+}

@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "7qd7NBg8oj2esBmI0gvRaW",
+    "name" : "Admin_ProcessEnd",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR1700000000008E"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Initial version:\nAdmin type dummy mapping responsible for plugging the gaps between what were the worklets.\n\nPotential:\nCould be used as:\n-  A checkpoint for admin data load in to database (support information)\n-  Part of a sub-process that enhances restartability (i.e. pick up at the point of failure)\n-  etc...",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ ]
+}

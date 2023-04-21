@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "glDAInJLsMZge3DqpaUos6",
+    "name" : "AT_Archive",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR1700000000009H"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "The SQ returns nothing at all, the interesting functionality is in the Pre-SQL of the target. This deletes AutoTest Results older than 28 days.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ ]
+}

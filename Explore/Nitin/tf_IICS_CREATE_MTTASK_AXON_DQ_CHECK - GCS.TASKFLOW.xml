@@ -1,0 +1,757 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>5hJdypKwKBqRi92-gt-9349814-2023-04-13T09:25:31.917Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_IICS_CREATE_MTTASK_AXON_DQ_CHECK_-_GCS</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>Task flow to query Object Catalog and invoke mapping task to create acquire Axon E2E ETL work table mapping task.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nalex@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-04-13T09:25:32Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_IICS_CREATE_MTTASK_AXON_DQ_CHECK - GCS"
+                   name="tf_IICS_CREATE_MTTASK_AXON_DQ_CHECK_-_GCS"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Task flow to query Object Catalog and invoke mapping task to create acquire Axon E2E ETL work table mapping task.</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="looping start counter to invoke create mapping task MCT."
+                      name="StartCount"
+                      type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="looping end counter to invoke create mapping task MCT."
+                      name="EndCount"
+                      type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="ExecutionCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task IICS CREATE MTTASK" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-3800-CREATE-IICS-MAPPING-TASK-AXON-DQ</option>
+                  </options>
+               </field>
+               <field description="" name="ExecutionList" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="MaxExecution" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="Data Task LIST_OBJECT_CATALOG"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-3800-LIST-AXON-DQ-CONFIG</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task Load DQ Config FF" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-3800-LOAD-AXON-DQ-CONFIG-FF</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="Data Task IICS CREATE MTTASK FAULT"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-3800-LIST-IICS-AXON-DQ-CREATE-MTTASK-FAULT</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task Update DQ Config" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-3800-UPDATE-AXON-DQ-CONFIG</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="DQSystem" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="DQDataSet" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="DQAttribute" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="DQDimension" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="SkipDQUpdateConfig" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ksupuuxr" targetId="ksupuuxq"/>
+               </start>
+               <container id="ksupuuxq" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="ksupuuxu">
+                     <assignment id="ksupuuy3">
+                        <title>Assignment Initialize</title>
+                        <operation source="constant" to="temp.StartCount">0</operation>
+                        <operation source="constant" to="temp.EndCount">0</operation>
+                        <operation source="constant" to="temp.ExecutionCount">0</operation>
+                     </assignment>
+                     <link id="ksupuuxv" targetId="ksupuuxq" type="containerLink"/>
+                  </flow>
+                  <flow id="ksupuuxx">
+                     <eventContainer id="ksupuuyg">
+                        <service id="ksupuuyc">
+                           <title>Data Task LIST_OBJECT_CATALOG</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_3800_LIST_AXON_DQ_CONFIG</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">efu1kZ05N81kCnNd91XXS9</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-3800-LIST-AXON-DQ-CONFIG">temp.Data Task LIST_OBJECT_CATALOG</operation>
+                                 <operation source="constant" to="mt-3800-LIST-AXON-DQ-CONFIG/inout[1]/pRowMax">0</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Data Task LIST_OBJECT_CATALOG/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Data Task LIST_OBJECT_CATALOG/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Data Task LIST_OBJECT_CATALOG/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Data Task LIST_OBJECT_CATALOG/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.Data Task LIST_OBJECT_CATALOG/inout/pRowMin">pRowMin</operation>
+                              <operation source="field" to="temp.Data Task LIST_OBJECT_CATALOG/inout/pRowMax">pRowMax</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/inout/pResourceName">pResourceName</operation>
+                              <operation source="field"
+                                         to="temp.Data Task LIST_OBJECT_CATALOG/inout/pObjectName">pObjectName</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="ksz3q33r" targetId="ksz3q33q"/>
+                        <events>
+                           <catch faultField="temp.Data Task LIST_OBJECT_CATALOG/fault"
+                                  id="kstgm6vd"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.Data Task LIST_OBJECT_CATALOG/fault"
+                                  id="kstgm6ve"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <assignment id="ksz3q33q">
+                        <title>Assignment Execution Initialization</title>
+                        <operation source="formula" to="temp.StartCount">
+                           <expression language="XQuery">fn:sum(($temp.DataTaskLIST_OBJECT_CATALOG[1]/inout[1]/pRowMin , -1))</expression>
+                        </operation>
+                        <operation source="field" to="temp.EndCount">temp.Data Task LIST_OBJECT_CATALOG[1]/inout[1]/pRowMax</operation>
+                        <operation source="field" to="temp.MaxExecution">temp.Data Task LIST_OBJECT_CATALOG[1]/output[1]/Success_Target_Rows</operation>
+                        <operation source="formula" to="temp.ExecutionList">
+                           <expression language="XQuery">list:append($temp.ExecutionList , $temp.DataTaskLIST_OBJECT_CATALOG[1]/inout[1]/pRowMin)</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ksupuuxy" targetId="ksupuuxq" type="containerLink"/>
+                  </flow>
+                  <link id="ksupuuxt" targetId="ksupuuxu" type="containerLink"/>
+                  <link id="ksupuuxw" targetId="ksupuuxx" type="containerLink"/>
+                  <link id="ksz3q33p" targetId="ksz3q32t"/>
+               </container>
+               <container id="kstgm6w5" type="exclusive">
+                  <title>Should Task Continue Execution?</title>
+                  <flow id="kstgm6w9">
+                     <assignment id="ksz3q308">
+                        <title>Assignment Row</title>
+                        <operation source="field" to="temp.Data Task IICS CREATE MTTASK[1]/inout[1]/pRow">temp.StartCount</operation>
+                        <link id="ksz3q309" targetId="kstgm735"/>
+                     </assignment>
+                     <assignment id="ksz5bz87">
+                        <title>Assignment Increment Execution</title>
+                        <operation source="formula" to="temp.ExecutionList">
+                           <expression language="XQuery">list:append($temp.ExecutionList , $temp.DataTaskIICSCREATEMTTASK[1]/output[1]/Run_Id )</expression>
+                        </operation>
+                        <operation source="formula" to="temp.ExecutionCount">
+                           <expression language="XQuery">list:count($temp.ExecutionList )</expression>
+                        </operation>
+                        <operation source="formula" to="temp.StartCount">
+                           <expression language="XQuery">fn:sum(($temp.StartCount  , 1))</expression>
+                        </operation>
+                        <operation source="constant" to="temp.SkipDQUpdateConfig">0</operation>
+                        <link id="lfu4zenj" targetId="lfu1zu3j"/>
+                     </assignment>
+                     <eventContainer id="kstgm735">
+                        <service id="kstgm72y">
+                           <title>Data Task IICS CREATE MTTASK</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_3800_CREATE_IICS_MAPPING_TASK_AXON_DQ</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">3lPuy60Gh31geaY85hWkCD</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-3800-CREATE-IICS-MAPPING-TASK-AXON-DQ">temp.Data Task IICS CREATE MTTASK</operation>
+                                 <operation source="constant"
+                                            to="mt-3800-CREATE-IICS-MAPPING-TASK-AXON-DQ/inout[1]/pDQSystem"/>
+                                 <operation source="constant"
+                                            to="mt-3800-CREATE-IICS-MAPPING-TASK-AXON-DQ/inout[1]/pDQDataSet"/>
+                                 <operation source="constant"
+                                            to="mt-3800-CREATE-IICS-MAPPING-TASK-AXON-DQ/inout[1]/pDQAttribute"/>
+                                 <operation source="constant"
+                                            to="mt-3800-CREATE-IICS-MAPPING-TASK-AXON-DQ/inout[1]/pDQDimension"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Data Task IICS CREATE MTTASK/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Data Task IICS CREATE MTTASK/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Data Task IICS CREATE MTTASK/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Data Task IICS CREATE MTTASK/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Data Task IICS CREATE MTTASK/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.Data Task IICS CREATE MTTASK/inout/pDummy">pDummy</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK/inout/pIcSessionID">pIcSessionID</operation>
+                              <operation source="field" to="temp.Data Task IICS CREATE MTTASK/inout/pRow">pRow</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="ksz5bz88" targetId="ksz5bz87"/>
+                        <events>
+                           <catch faultField="temp.Data Task IICS CREATE MTTASK/fault"
+                                  id="kstgm733"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.Data Task IICS CREATE MTTASK/fault"
+                                  id="kstgm734"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="lfu1zu3j">
+                        <service id="lfu1zu2o">
+                           <title>Data Task IICS CREATE MTTASK FAULT</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_3800_LIST_IICS_AXON_DQ_CREATE_MTTASK_FAULT</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">84d5MIVVGDDe0dV5qxeRYc</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-3800-LIST-IICS-AXON-DQ-CREATE-MTTASK-FAULT">temp.Data Task IICS CREATE MTTASK FAULT</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/inout/pRowMin">pRowMin</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/inout/pRowMax">pRowMax</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/inout/pResourceName">pResourceName</operation>
+                              <operation source="field"
+                                         to="temp.Data Task IICS CREATE MTTASK FAULT/inout/pObjectName">pObjectName</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="lfu4zeql" targetId="lfu4zeqk"/>
+                        <events>
+                           <catch faultField="temp.Data Task IICS CREATE MTTASK FAULT/fault"
+                                  id="lfu1zu3h"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.Data Task IICS CREATE MTTASK FAULT/fault"
+                                  id="lfu1zu3i"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <container id="lfu4zeqk" type="exclusive">
+                        <title>Decision UPDATE DQ CONFIG</title>
+                        <flow id="lfu4zeqo">
+                           <eventContainer id="lfu4zero">
+                              <service id="lfu4zeqz">
+                                 <title>Data Task Update DQ Config</title>
+                                 <serviceName>ICSExecuteDataTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">mt_3800_UPDATE_AXON_DQ_CONFIG</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">7myO5LgDvHigyV1aR9FoWC</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                    <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="mt-3800-UPDATE-AXON-DQ-CONFIG">temp.Data Task Update DQ Config</operation>
+                                       <operation source="formula" to="mt-3800-UPDATE-AXON-DQ-CONFIG/inout[1]/pFilterSrc">
+                                          <expression language="XQuery">let $s1 := 'AXON_DQ_CONFIG.SYSTEM = '
+let $s2 := ' AND AXON_DQ_CONFIG.DATA_SET = '
+let $s3 := ' AND AXON_DQ_CONFIG.ATTRIBUTE_NAME = '
+let $s4 := ' AND AXON_DQ_CONFIG.DQ_DIMENSION = '
+let $s5 := "'"
+
+let $t1 := fn:concat($s1, $s5 )
+let $t2 := fn:concat($s1, $temp.DataTaskIICSCREATEMTTASK[1]/inout[1]/pDQSystem  )
+let $t3 := fn:concat($t2, $s5 )
+
+let $t4 := fn:concat($t3, $s2 )
+let $t5 := fn:concat($t4, $s5 )
+let $t6 := fn:concat($t5, $temp.DataTaskIICSCREATEMTTASK[1]/inout[1]/pDQDataSet )
+let $t7 := fn:concat($t6, $s5 )
+
+let $t8 := fn:concat($t7, $s3 )
+let $t9 := fn:concat($t8, $s5 )
+let $t10 := fn:concat($t9, $temp.DataTaskIICSCREATEMTTASK[1]/inout[1]/pDQAttribute )
+let $t11 := fn:concat($t10, $s5 )
+
+let $t12 := fn:concat($t11, $s4 )
+let $t13 := fn:concat($t12, $s5 )
+let $t14 := fn:concat($t13, $temp.DataTaskIICSCREATEMTTASK[1]/inout[1]/pDQDimension )
+let $t15 := fn:concat($t14, $s5 )
+
+return($t15)</expression>
+                                       </operation>
+                                       <operation source="field" to="mt-3800-UPDATE-AXON-DQ-CONFIG/inout[1]/pDQAttribute">temp.DataTaskIICSCREATEMTTASK[1]/inout[1]/pDQAttribute</operation>
+                                       <operation source="field" to="mt-3800-UPDATE-AXON-DQ-CONFIG/inout[1]/pDQDataSet">temp.DataTaskIICSCREATEMTTASK[1]/inout[1]/pDQDataSet</operation>
+                                       <operation source="field" to="mt-3800-UPDATE-AXON-DQ-CONFIG/inout[1]/pDQDimension">temp.DataTaskIICSCREATEMTTASK[1]/inout[1]/pDQDimension</operation>
+                                       <operation source="field" to="mt-3800-UPDATE-AXON-DQ-CONFIG/inout[1]/pDQSystem">temp.DataTaskIICSCREATEMTTASK[1]/inout[1]/pDQSystem</operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/output/Object_Name">Object Name</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/output/Log_Id">Log Id</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/output/Task_Id">Task Id</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/output/Task_Status">Task Status</operation>
+                                    <operation source="field"
+                                               to="temp.Data Task Update DQ Config/output/Success_Source_Rows">Success Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.Data Task Update DQ Config/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.Data Task Update DQ Config/output/Success_Target_Rows">Success Target Rows</operation>
+                                    <operation source="field"
+                                               to="temp.Data Task Update DQ Config/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.Data Task Update DQ Config/output/Error_Message">Error Message</operation>
+                                    <operation source="field"
+                                               to="temp.Data Task Update DQ Config/output/TotalTransErrors">Total Transformation Errors</operation>
+                                    <operation source="field"
+                                               to="temp.Data Task Update DQ Config/output/FirstErrorCode">First Error Code</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/inout/pFilterSrc">pFilterSrc</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/inout/pDQSystem">pDQSystem</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/inout/pDQDataSet">pDQDataSet</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/inout/pDQAttribute">pDQAttribute</operation>
+                                    <operation source="field" to="temp.Data Task Update DQ Config/inout/pDQDimension">pDQDimension</operation>
+                                 </serviceOutput>
+                              </service>
+                              <events>
+                                 <catch faultField="temp.Data Task Update DQ Config/fault"
+                                        id="lfu1ztx4"
+                                        interrupting="true"
+                                        name="error">
+                                    <suspend/>
+                                 </catch>
+                                 <catch faultField="temp.Data Task Update DQ Config/fault"
+                                        id="lfu1ztx5"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <link id="lfu4zeqp" targetId="lfu4zeqk" type="containerLink"/>
+                        </flow>
+                        <flow id="lfu4zeqr">
+                           <link id="lfu4zeqs" targetId="lfu4zeqk" type="containerLink"/>
+                        </flow>
+                        <link id="lfu4zeqn" targetId="lfu4zeqo" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.SkipDQUpdateConfig}</arg>
+                                 <arg name="right">{0}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lfu4zeqq" targetId="lfu4zeqr" type="containerLink"/>
+                        <link id="lfu4zeqy" targetId="kt0fz98p"/>
+                     </container>
+                     <jumpTo id="kt0fz98p">
+                        <link id="kt0fz98q" targetId="kstgm6w5"/>
+                     </jumpTo>
+                  </flow>
+                  <flow id="kstgm6wc">
+                     <eventContainer id="lfu1ztzp">
+                        <service id="lfu1ztzi">
+                           <title>Data Task Load DQ Config FF</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_3800_LOAD_AXON_DQ_CONFIG_FF</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">fhIxeaGo6o9knUfBxOgSC2</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-3800-LOAD-AXON-DQ-CONFIG-FF">temp.Data Task Load DQ Config FF</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Data Task Load DQ Config FF/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Data Task Load DQ Config FF/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Data Task Load DQ Config FF/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Data Task Load DQ Config FF/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Data Task Load DQ Config FF/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.Data Task Load DQ Config FF/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task Load DQ Config FF/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task Load DQ Config FF/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Data Task Load DQ Config FF/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Data Task Load DQ Config FF/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Data Task Load DQ Config FF/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.Data Task Load DQ Config FF/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.Data Task Load DQ Config FF/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.Data Task Load DQ Config FF/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.Data Task Load DQ Config FF/inout/pTgtFFName">pTgtFFName</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="lfu1ztzj" targetId="ksupuuwh"/>
+                        <events>
+                           <catch faultField="temp.Data Task Load DQ Config FF/fault"
+                                  id="lfu1ztzn"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.Data Task Load DQ Config FF/fault"
+                                  id="lfu1ztzo"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <end id="ksupuuwh">
+                        <title>End 1</title>
+                     </end>
+                  </flow>
+                  <link id="kstgm6w8" targetId="kstgm6w9" type="containerLink">
+                     <condition source="formula">
+                        <function name="less-or-equals">
+                           <arg name="left">{$temp.StartCount}</arg>
+                           <arg name="right">{$temp.EndCount }</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="kstgm6wb" targetId="kstgm6wc" type="containerLink"/>
+               </container>
+               <assignment id="ksz3q32t">
+                  <title>Assignment First Execution</title>
+                  <operation source="formula" to="temp.StartCount">
+                     <expression language="XQuery">fn:sum(($temp.StartCount ,1))</expression>
+                  </operation>
+                  <operation source="formula" to="temp.ExecutionCount">
+                     <expression language="XQuery">list:count($temp.ExecutionList )</expression>
+                  </operation>
+                  <link id="ksz3q32v" targetId="kstgm6w5"/>
+               </assignment>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-3800-CREATE-IICS-MAPPING-TASK-AXON-DQ"
+                              isByCopy="true"
+                              name="mt-3800-CREATE-IICS-MAPPING-TASK-AXON-DQ">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-3800-LIST-AXON-DQ-CONFIG"
+                              isByCopy="true"
+                              name="mt-3800-LIST-AXON-DQ-CONFIG">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-3800-LOAD-AXON-DQ-CONFIG-FF"
+                              isByCopy="true"
+                              name="mt-3800-LOAD-AXON-DQ-CONFIG-FF">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-3800-LIST-IICS-AXON-DQ-CREATE-MTTASK-FAULT"
+                              isByCopy="true"
+                              name="mt-3800-LIST-IICS-AXON-DQ-CREATE-MTTASK-FAULT">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-3800-UPDATE-AXON-DQ-CONFIG"
+                              isByCopy="true"
+                              name="mt-3800-UPDATE-AXON-DQ-CONFIG">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>8dIdY3Kzpe2fzF00GGFm69</types1:GUID>
+      <types1:DisplayName>tf_IICS_CREATE_MTTASK_AXON_DQ_CHECK - GCS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:42:00.071Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

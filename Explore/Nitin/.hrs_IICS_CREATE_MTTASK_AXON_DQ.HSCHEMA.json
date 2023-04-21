@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "a2kaTjhNuSPgockTUYIOKK",
+    "name" : "hrs_IICS_CREATE_MTTASK_AXON_DQ",
+    "type" : "HSCHEMA",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR36000000000007"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Hierarchy schema for generating create IICS Axon DQ mapping task payload.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ ]
+}

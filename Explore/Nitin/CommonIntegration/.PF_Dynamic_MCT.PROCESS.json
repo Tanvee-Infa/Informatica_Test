@@ -1,0 +1,84 @@
+{
+  "objectInfo" : {
+    "id" : "6URKAXC6xQ5bNrX806cjGc",
+    "name" : "PF_Dynamic_MCT",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "puoJ49ARJi4tciS-gt-588793-2022-09-13T09:03:02.517Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Dynamic",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "8SzSrOKEXWDcE275EtVYMA",
+    "name" : "C-IICSRestAPIDynamicMCT",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "lMMP5gjn9OQcjoY-gt-409177-2022-09-13T09:03:01.903Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Dynamic",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin/CommonIntegration"
+  }, {
+    "id" : "5fMmmW3AzlkkTAYCNSxWe4",
+    "name" : "FileWriteTask",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "i4YclFmVSciY3Ax-gt-594067-2022-09-13T09:03:01.374Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Dynamic",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin/CommonIntegration"
+  }, {
+    "id" : "4Ui5Xg4PM06g7iy0lSId2J",
+    "name" : "C-getErrorInfo",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "m1jlMfVMTonQYWe-gt-409187-2022-09-13T09:03:01.962Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Informatica Connection - is a wrapper connection for SC-getErrorInfo which helps in reusing the connection in other services",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CommonServices/Utilities"
+  } ]
+}

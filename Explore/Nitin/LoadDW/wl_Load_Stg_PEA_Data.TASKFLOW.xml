@@ -1,0 +1,1199 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>f2B7O2htghGZ5i4-gt-12572143-2023-03-15T07:25:01.093Z::tf.xml</types1:EntryId>
+      <types1:Name>wl_Load_Stg_PEA_Data</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>tanvee@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-03-15T07:25:01Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="wl_Load_Stg_PEA_Data"
+                   name="wl_Load_Stg_PEA_Data"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="ParamFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ParamFileDir" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="s_Load_PEA_lkp" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-PEA-lkp</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_Platform_ChargeConfig_AssetTypes"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Platform-ChargeConfig-AssetTypes</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_Platform_Charges_AccountChargeBundles"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Platform-Charges-AccountChargeBundles</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_Platform_Charges_ChargeBundles"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Platform-Charges-ChargeBundles</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_Platform_Charges_ChargeBundleTypes"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Platform-Charges-ChargeBundleTypes</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_Platform_Charges_CompanyChargeBundleHistory"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Platform-Charges-CompanyChargeBundleHistory</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_Platform_Charges_CompanyChargeBundles"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Platform-Charges-CompanyChargeBundles</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_Platform_ProductWrappers_ProductWrapperTypes"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Platform-ProductWrappers-ProductWrapperTypes</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_Platform_ProductWrappers_SubAccountTypes"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-Platform-ProductWrappers-SubAccountTypes</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_ChargeScheduleRateCardBundles"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-stg-ChargeScheduleRateCardBundles</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="le5n467e" targetId="le5n467d"/>
+               </start>
+               <container id="le5n467d" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="le5n467h">
+                     <eventContainer id="le5n46a8">
+                        <service id="le5n469u">
+                           <title>s_Load_PEA_lkp</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_PEA_lkp</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">3mn0OZ1i7YAfdaXXcewagb</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-PEA-lkp">temp.s_Load_PEA_lkp</operation>
+                                 <operation source="constant"
+                                            to="s-Load-PEA-lkp/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_PEA_lkp[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-PEA-lkp/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_PEA_lkp[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.s_Load_PEA_lkp/inout/ParamStepComplete">ParamStepComplete</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_PEA_lkp/fault"
+                                  id="le5n46a6"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_PEA_lkp/fault"
+                                  id="le5n46a7"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n467i" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n467k">
+                     <eventContainer id="le5od0r4">
+                        <service id="le5od0qq">
+                           <title>s_Load_Platform_ChargeConfig_AssetTypes</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_Platform_ChargeConfig_AssetTypes</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">25XZY209bqNk8lch6G5X40</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-Platform-ChargeConfig-AssetTypes">temp.s_Load_Platform_ChargeConfig_AssetTypes</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-ChargeConfig-AssetTypes/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_ChargeConfig_AssetTypes[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-ChargeConfig-AssetTypes/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_ChargeConfig_AssetTypes[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ChargeConfig_AssetTypes/inout/ParamStepComplete">ParamStepComplete</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_Platform_ChargeConfig_AssetTypes/fault"
+                                  id="le5od0r2"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_Platform_ChargeConfig_AssetTypes/fault"
+                                  id="le5od0r3"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n467l" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n467p">
+                     <eventContainer id="le5od0u3">
+                        <service id="le5od0t7">
+                           <title>s_Load_Platform_Charges_AccountChargeBundles</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_Platform_Charges_AccountChargeBundles</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">0XYzStWhoY6j9rVn4Hpkun</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-Platform-Charges-AccountChargeBundles">temp.s_Load_Platform_Charges_AccountChargeBundles</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-AccountChargeBundles/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_AccountChargeBundles[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-AccountChargeBundles/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_AccountChargeBundles[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_AccountChargeBundles/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_Platform_Charges_AccountChargeBundles/fault"
+                                  id="le5od0u1"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_Platform_Charges_AccountChargeBundles/fault"
+                                  id="le5od0u2"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n467q" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n467v">
+                     <eventContainer id="le5od0we">
+                        <service id="le5od0w0">
+                           <title>s_Load_Platform_Charges_ChargeBundles</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_Platform_Charges_ChargeBundles</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1bdN5oCWYe9iE9zrUhdM21</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-Platform-Charges-ChargeBundles">temp.s_Load_Platform_Charges_ChargeBundles</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-ChargeBundles/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_ChargeBundles[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-ChargeBundles/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_ChargeBundles[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundles/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_Platform_Charges_ChargeBundles/fault"
+                                  id="le5od0wc"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_Platform_Charges_ChargeBundles/fault"
+                                  id="le5od0wd"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n467w" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n4682">
+                     <eventContainer id="le5od0yx">
+                        <service id="le5od0y1">
+                           <title>s_Load_Platform_Charges_ChargeBundleTypes</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_Platform_Charges_ChargeBundleTypes</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">2TP4drkbyIiiNSjS5DZmSU</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-Platform-Charges-ChargeBundleTypes">temp.s_Load_Platform_Charges_ChargeBundleTypes</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-ChargeBundleTypes/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_ChargeBundleTypes[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-ChargeBundleTypes/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_ChargeBundleTypes[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_ChargeBundleTypes/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_Platform_Charges_ChargeBundleTypes/fault"
+                                  id="le5od0yv"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_Platform_Charges_ChargeBundleTypes/fault"
+                                  id="le5od0yw"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n4683" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n468a">
+                     <eventContainer id="le5od10y">
+                        <service id="le5od10k">
+                           <title>s_Load_Platform_Charges_CompanyChargeBundleHistory</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_Platform_Charges_CompanyChargeBundleHistory</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">5LsUi4YPKRmjodqS5CUXIZ</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-Platform-Charges-CompanyChargeBundleHistory">temp.s_Load_Platform_Charges_CompanyChargeBundleHistory</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-CompanyChargeBundleHistory/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-CompanyChargeBundleHistory/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/fault"
+                                  id="le5od10w"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_Platform_Charges_CompanyChargeBundleHistory/fault"
+                                  id="le5od10x"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n468b" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n468j">
+                     <eventContainer id="le5od13t">
+                        <service id="le5od12v">
+                           <title>s_Load_Platform_Charges_CompanyChargeBundles</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_Platform_Charges_CompanyChargeBundles</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1McUVrc82EdgVBYieMFIMl</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-Platform-Charges-CompanyChargeBundles">temp.s_Load_Platform_Charges_CompanyChargeBundles</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-CompanyChargeBundles/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_CompanyChargeBundles[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-Charges-CompanyChargeBundles/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_Charges_CompanyChargeBundles[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_Charges_CompanyChargeBundles/inout/ParamChargePropositionId">ParamChargePropositionId</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_Platform_Charges_CompanyChargeBundles/fault"
+                                  id="le5od13r"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_Platform_Charges_CompanyChargeBundles/fault"
+                                  id="le5od13s"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n468k" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n468t">
+                     <eventContainer id="le5od15y">
+                        <service id="le5od15k">
+                           <title>s_Load_Platform_ProductWrappers_ProductWrapperTypes</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_Platform_ProductWrappers_ProductWrapperTypes</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1W1UowkL8kbiInghFVGHgK</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-Platform-ProductWrappers-ProductWrapperTypes">temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-ProductWrappers-ProductWrapperTypes/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-ProductWrappers-ProductWrapperTypes/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/inout/ParamStepComplete">ParamStepComplete</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/inout/ParamSourceSystemID">ParamSourceSystemID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/fault"
+                                  id="le5od15w"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_Platform_ProductWrappers_ProductWrapperTypes/fault"
+                                  id="le5od15x"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n468u" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n4694">
+                     <eventContainer id="le5od18r">
+                        <service id="le5od17t">
+                           <title>s_Load_Platform_ProductWrappers_SubAccountTypes</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_Platform_ProductWrappers_SubAccountTypes</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">dgPSxQ0YHALcRTfqGAGPqO</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-Platform-ProductWrappers-SubAccountTypes">temp.s_Load_Platform_ProductWrappers_SubAccountTypes</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-ProductWrappers-SubAccountTypes/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-Platform-ProductWrappers-SubAccountTypes/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/inout/ParamServiceCode">ParamServiceCode</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/fault"
+                                  id="le5od18p"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_Platform_ProductWrappers_SubAccountTypes/fault"
+                                  id="le5od18q"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n4695" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <flow id="le5n469g">
+                     <eventContainer id="le5od1aw">
+                        <service id="le5od1ai">
+                           <title>s_Load_stg_ChargeScheduleRateCardBundles</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_ChargeScheduleRateCardBundles</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">ld5dyp1kogbercBl62z1EA</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-ChargeScheduleRateCardBundles">temp.s_Load_stg_ChargeScheduleRateCardBundles</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-ChargeScheduleRateCardBundles/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_ChargeScheduleRateCardBundles[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-ChargeScheduleRateCardBundles/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_ChargeScheduleRateCardBundles[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/inout/APIResetExtract">APIResetExtract</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_ChargeScheduleRateCardBundles/inout/ParamISOCode">ParamISOCode</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_ChargeScheduleRateCardBundles/fault"
+                                  id="le5od1au"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_ChargeScheduleRateCardBundles/fault"
+                                  id="le5od1av"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="le5n469h" targetId="le5n467d" type="containerLink"/>
+                  </flow>
+                  <link id="le5n467g" targetId="le5n467h" type="containerLink"/>
+                  <link id="le5n467j" targetId="le5n467k" type="containerLink"/>
+                  <link id="le5n467o" targetId="le5n467p" type="containerLink"/>
+                  <link id="le5n467u" targetId="le5n467v" type="containerLink"/>
+                  <link id="le5n4681" targetId="le5n4682" type="containerLink"/>
+                  <link id="le5n4689" targetId="le5n468a" type="containerLink"/>
+                  <link id="le5n468i" targetId="le5n468j" type="containerLink"/>
+                  <link id="le5n468s" targetId="le5n468t" type="containerLink"/>
+                  <link id="le5n4693" targetId="le5n4694" type="containerLink"/>
+                  <link id="le5n469f" targetId="le5n469g" type="containerLink"/>
+                  <link id="le5n467f" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-PEA-lkp"
+                              isByCopy="true"
+                              name="s-Load-PEA-lkp">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Platform-ChargeConfig-AssetTypes"
+                              isByCopy="true"
+                              name="s-Load-Platform-ChargeConfig-AssetTypes">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Platform-Charges-AccountChargeBundles"
+                              isByCopy="true"
+                              name="s-Load-Platform-Charges-AccountChargeBundles">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Platform-Charges-ChargeBundles"
+                              isByCopy="true"
+                              name="s-Load-Platform-Charges-ChargeBundles">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Platform-Charges-ChargeBundleTypes"
+                              isByCopy="true"
+                              name="s-Load-Platform-Charges-ChargeBundleTypes">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Platform-Charges-CompanyChargeBundleHistory"
+                              isByCopy="true"
+                              name="s-Load-Platform-Charges-CompanyChargeBundleHistory">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Platform-Charges-CompanyChargeBundles"
+                              isByCopy="true"
+                              name="s-Load-Platform-Charges-CompanyChargeBundles">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Platform-ProductWrappers-ProductWrapperTypes"
+                              isByCopy="true"
+                              name="s-Load-Platform-ProductWrappers-ProductWrapperTypes">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-Platform-ProductWrappers-SubAccountTypes"
+                              isByCopy="true"
+                              name="s-Load-Platform-ProductWrappers-SubAccountTypes">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-ChargeScheduleRateCardBundles"
+                              isByCopy="true"
+                              name="s-Load-stg-ChargeScheduleRateCardBundles">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>4HBEhM0uZp0iJLQOIKw48z</types1:GUID>
+      <types1:DisplayName>wl_Load_Stg_PEA_Data</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:42:00.001Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

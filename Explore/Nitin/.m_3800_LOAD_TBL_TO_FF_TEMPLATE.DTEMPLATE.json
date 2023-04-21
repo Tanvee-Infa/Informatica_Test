@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "1MgmpxQLLlMgeYeSyGBJ6S",
+    "name" : "m_3800_LOAD_TBL_TO_FF_TEMPLATE",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR170000000000GX"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Generic mapping template to load from table source to flat file target.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "7XniRzGQWUVdmQRAxmt9KD",
+    "name" : "FF_Axon_SRCFILES_DQ",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B00000000007A"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "FF source in Axon\\SrcFiles\\DQ folder",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

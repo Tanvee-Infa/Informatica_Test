@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "fhbGfy1ceGAhssRTGQq6cX",
+    "name" : "mplt_COMMON_RETRIEVE_DIM_PLAN_CK",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR4000000000000G"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Created By:  Brian Seamans\r\nDate:               July 2007\r\nScope:           General\r\nFunction:        Retrieves the Plan Dim CK.  This mapplet will retrieve the correct Plan Dim CK or assign one of the defaults based upon data inputs.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ ]
+}

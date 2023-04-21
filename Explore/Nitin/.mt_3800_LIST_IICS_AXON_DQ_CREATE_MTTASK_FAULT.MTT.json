@@ -1,0 +1,107 @@
+{
+  "objectInfo" : {
+    "id" : "84d5MIVVGDDe0dV5qxeRYc",
+    "name" : "mt_3800_LIST_IICS_AXON_DQ_CREATE_MTTASK_FAULT",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0Z0000000000HQ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task to query  [AcqIQ].[work].[IICS_AXON_DQ_CREATE_MTTASK_FAULT] and output to Flat File.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "5v3H6Z1xeg2lwMzFahJCQ2",
+    "name" : "m_3800_LIST_OBJECT_TEMPLATE",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR170000000000GW"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Mapping to query [edc].[vw_EDC_TABLE_OBJECT_DETAIL_ROOT] and output result to file.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/NSP_Project"
+  }, {
+    "id" : "5KyXSFU4US5cVmJ9U6AoYh",
+    "name" : "FF_Axon_TGTFILES",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B000000000077"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "FF source in Axon\\TgtFiles folder",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "5XNEv1UzqIXcKQ1wpPohY7",
+    "name" : "Sql_AcqIQ_Work",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B00000000007D"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Sql connection to AcqIQ database work schema",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "h18t4QM38E2lNubI0iomCg",
+    "name" : "Alex_SA_Windows_Shared",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR25000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

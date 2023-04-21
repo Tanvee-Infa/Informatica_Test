@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "1NojwHpSYguhHl72kjwZ8e",
+    "name" : "bs_IICS_FETCH_MTTASK_AXON_DQ",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR2700000000000T"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "01C1HR2800000000000U",
+        "value" : "1NojwHpSYguhHl72kjwZ8e@fetchMttask"
+      } ],
+      "additionalInfo" : {
+        "description" : "Business service to fetch IICS AXON DQ mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "57kSL0gxmoMdXJoAQG5wYJ",
+    "name" : "rst_IICS_FETCH_MTTASK_AXON_DQ",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B000000000078"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Rest API connection to fetch IICS AXON DQ mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

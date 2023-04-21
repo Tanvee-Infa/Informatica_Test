@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "cV5qJo1hmKVfcGW2KEMT6V",
+    "name" : "bs_IICS_CREATE_MTTASK",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR2700000000000U"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "01C1HR2800000000000V",
+        "value" : "cV5qJo1hmKVfcGW2KEMT6V@create_mttask"
+      } ],
+      "additionalInfo" : {
+        "description" : "Business service component to create IICS mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "52Jf7rDQMnmj7Qa0wZn6Wr",
+    "name" : "rst_IICS_CREATE_MTTASK",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0B00000000007C"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Rest V2 connection to create IICS mapping task.",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "7A9Y9fjWA41b209r73IlE6",
+    "name" : "SC-IICSRestAPIDynamicMCT",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "iXaabcjw4ARW8UB-gt-594059-2022-09-13T09:03:01.344Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Dynamic",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

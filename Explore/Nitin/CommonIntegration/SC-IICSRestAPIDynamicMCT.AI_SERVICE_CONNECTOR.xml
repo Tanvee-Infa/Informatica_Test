@@ -1,0 +1,617 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>iXaabcjw4ARW8UB-gt-594059-2022-09-13T09:03:01.344Z::svc.xml</types1:EntryId>
+      <types1:Name>SC-IICSRestAPIDynamicMCT</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Dynamic</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nalex@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2022-09-13T09:03:01Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>nalex@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2022-09-13T09:03:04Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SC_IICSRestAPIDynamicMCT/SC_IICSRestAPIDynamicMCT_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SC-IICSRestAPIDynamicMCT"
+                            label=""
+                            name="SC-IICSRestAPIDynamicMCT"
+                            uuid="86983baf-6cae-48aa-9129-93ee98b6cc07">
+            <description>Dynamic</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description=""
+                                    masked="true"
+                                    name="IICS_Password"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="IICS_Username"
+                                    required="true"
+                                    testWith="API_MCT_INT1"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Login"
+                       maxRedirects="100"
+                       name="Login"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://dm-us.informaticacloud.com/ma/api/v2/user/login"
+                                        verb="POST">
+                        <authentication>
+                           <username>API_MCT_INT1</username>
+                           <password>api_mct_int1234</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{ "username": "{$IICS_Username }", 
+"password": "{$IICS_Password }"  }}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="icSessionId"
+                            property="icSessionId"
+                            type="string"/>
+                     <field description=""
+                            name="serverUrl"
+                            property="serverUrl"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="GetMappingTask"
+                       maxRedirects="100"
+                       name="GetMappingTask"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="ServerURL"
+                                nogen="true"
+                                required="false"
+                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                type="string"/>
+                     <parameter name="icSessionId"
+                                nogen="true"
+                                required="false"
+                                testWith="92wdBtSXcItebY0MfQQCEq"
+                                type="string"/>
+                     <parameter name="MCTName"
+                                nogen="true"
+                                required="false"
+                                testWith="MT-SAMSCEAMS_ProjectTasks-Decrypt"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$ServerURL}/api/v2/mttask/name/{$MCTName}"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="icSessionId">{$icSessionId}</header>
+                           <header name="Accept">application/xml</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="GetMappingTaskResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">MappingTaskResponse</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="CreateMappingTask"
+                       maxRedirects="100"
+                       name="CreateMappingTask"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="ServerURL"
+                                nogen="true"
+                                required="false"
+                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                type="string"/>
+                     <parameter name="icSessionId"
+                                nogen="true"
+                                required="false"
+                                testWith="5VBke0lhXFWchzijvXaGid"
+                                type="string"/>
+                     <parameter name="CreateMCTRequest"
+                                nogen="true"
+                                required="false"
+                                testWith="&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;&lt;mtTask xmlns:rest=&#34;http://schemas.activebpel.org/REST/2007/12/01/aeREST.xsd&#34;&gt;&lt;id&gt;010F5X0Z0000000001BK&lt;/id&gt;&lt;orgId&gt;010F5X&lt;/orgId&gt;&lt;name&gt;MT-SAMSCEAMS_ProjectTasks-Decrypt-108&lt;/name&gt;&lt;description&gt;PPM_INT_088- This mapping task is used to decrypt the SAMSCEAMS ProjectTasks file&lt;/description&gt;&lt;createTime&gt;2020-09-21T05:46:31.000Z&lt;/createTime&gt;&lt;updateTime&gt;2021-01-14T19:59:21.000Z&lt;/updateTime&gt;&lt;createdBy&gt;skotla&lt;/createdBy&gt;&lt;updatedBy&gt;spunati@njresources.com&lt;/updatedBy&gt;&lt;agentId&gt;010F5X08000000000006&lt;/agentId&gt;&lt;runtimeEnvironmentId&gt;010F5X25000000000002&lt;/runtimeEnvironmentId&gt;&lt;maxLogs&gt;10&lt;/maxLogs&gt;&lt;parameters&gt;&lt;parameter&gt;&lt;id&gt;187355092&lt;/id&gt;&lt;name&gt;$Src_SAMSCEAMS_ProjectTasks$&lt;/name&gt;&lt;type&gt;EXTENDED_SOURCE&lt;/type&gt;&lt;label&gt;Src_SAMSCEAMS_ProjectTasks&lt;/label&gt;&lt;uiProperties&gt;&lt;entry&gt;&lt;key&gt;connectionParameterized&lt;/key&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;&lt;entry&gt;&lt;key&gt;isMsrcFilterParameterized&lt;/key&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;&lt;entry&gt;&lt;key&gt;isMsrcSortParameterized&lt;/key&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;&lt;entry&gt;&lt;key&gt;objectParameterized&lt;/key&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;&lt;entry&gt;&lt;key&gt;visible&lt;/key&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;&lt;/uiProperties&gt;&lt;sourceConnectionId&gt;010F5X0B00000000007S&lt;/sourceConnectionId&gt;&lt;newFlatFile&gt;false&lt;/newFlatFile&gt;&lt;newObject&gt;false&lt;/newObject&gt;&lt;showBusinessNames&gt;false&lt;/showBusinessNames&gt;&lt;naturalOrder&gt;true&lt;/naturalOrder&gt;&lt;truncateTarget&gt;false&lt;/truncateTarget&gt;&lt;bulkApiDBTarget&gt;false&lt;/bulkApiDBTarget&gt;&lt;customFuncCfg&gt;&lt;id&gt;-1&lt;/id&gt;&lt;/customFuncCfg&gt;&lt;tgtFieldRefs/&gt;&lt;extendedObject&gt;&lt;filters&gt;&lt;filter&gt;&lt;field&gt;PrivateKeyPath&lt;/field&gt;FileDecrypt&lt;/objectName&gt;&lt;operator&gt;equals&lt;/operator&gt;&lt;type&gt;STRING&lt;/type&gt;&lt;value&gt;\\njresources\integration\KeyPairs\NonProd\SAMSCEAMS\Inbound\SAMSCEAMS_NonProd_Private.asc&lt;/value&gt;&lt;/filter&gt;&lt;filter&gt;&lt;field&gt;Decryption_Type&lt;/field&gt;FileDecrypt&lt;/objectName&gt;&lt;operator&gt;equals&lt;/operator&gt;&lt;type&gt;STRING&lt;/type&gt;&lt;value&gt;PGP&lt;/value&gt;&lt;/filter&gt;&lt;filter&gt;&lt;field&gt;PassPhrase&lt;/field&gt;FileDecrypt&lt;/objectName&gt;&lt;operator&gt;equals&lt;/operator&gt;&lt;type&gt;STRING&lt;/type&gt;&lt;value&gt;PassKey1&lt;/value&gt;&lt;/filter&gt;&lt;/filters&gt;&lt;sortFields/&gt;&lt;/extendedObject&gt;&lt;runtimeAttrs/&gt;&lt;isRESTModernSource&gt;true&lt;/isRESTModernSource&gt;&lt;isFileList&gt;false&lt;/isFileList&gt;&lt;handleSpecialChars&gt;false&lt;/handleSpecialChars&gt;&lt;frsAsset&gt;false&lt;/frsAsset&gt;&lt;dynamicFileName&gt;false&lt;/dynamicFileName&gt;&lt;currentlyProcessedFileName&gt;false&lt;/currentlyProcessedFileName&gt;&lt;overriddenFields/&gt;&lt;tgtObjectAttributes/&gt;&lt;runtimeParameterData&gt;&lt;isConnectionRuntimeParameter&gt;false&lt;/isConnectionRuntimeParameter&gt;&lt;isObjectRuntimeParameter&gt;false&lt;/isObjectRuntimeParameter&gt;&lt;/runtimeParameterData&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;id&gt;187355095&lt;/id&gt;&lt;name&gt;$Tgt_SAMSCEAMS_ProjectTasks_DecryptMetadata$&lt;/name&gt;&lt;type&gt;TARGET&lt;/type&gt;&lt;label&gt;Tgt_SAMSCEAMS_ProjectTasks_DecryptMetadata&lt;/label&gt;&lt;uiProperties&gt;&lt;entry&gt;&lt;key&gt;connectionParameterized&lt;/key&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;&lt;entry&gt;&lt;key&gt;objectParameterized&lt;/key&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;&lt;entry&gt;&lt;key&gt;visible&lt;/key&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;&lt;entry&gt;&lt;key&gt;defaultTargetUpdateColumns&lt;/key&gt;&lt;value/&gt;&lt;/entry&gt;&lt;/uiProperties&gt;&lt;targetConnectionId&gt;010F5X0B00000000007T&lt;/targetConnectionId&gt;&lt;targetObject&gt;SAMSCEAMS-ProjectTasks-FileDecrypt.csv&lt;/targetObject&gt;&lt;targetObjectLabel&gt;SAMSCEAMS-ProjectTasks-FileDecrypt.csv&lt;/targetObjectLabel&gt;&lt;newFlatFile&gt;false&lt;/newFlatFile&gt;&lt;newObject&gt;false&lt;/newObject&gt;&lt;showBusinessNames&gt;false&lt;/showBusinessNames&gt;&lt;naturalOrder&gt;true&lt;/naturalOrder&gt;&lt;truncateTarget&gt;false&lt;/truncateTarget&gt;&lt;bulkApiDBTarget&gt;false&lt;/bulkApiDBTarget&gt;&lt;operationType&gt;Insert&lt;/operationType&gt;&lt;tgtFFAttrs&gt;&lt;delimiter&gt;,&lt;/delimiter&gt;&lt;escapeChar/&gt;&lt;headerLineNo&gt;1&lt;/headerLineNo&gt;&lt;id&gt;28397809&lt;/id&gt;&lt;textQualifier&gt;&#34;&lt;/textQualifier&gt;&lt;/tgtFFAttrs&gt;&lt;customFuncCfg&gt;&lt;id&gt;-1&lt;/id&gt;&lt;/customFuncCfg&gt;&lt;tgtFieldRefs/&gt;&lt;extendedObject&gt;&lt;filters/&gt;&lt;sortFields/&gt;&lt;/extendedObject&gt;&lt;runtimeAttrs/&gt;&lt;isRESTModernSource&gt;true&lt;/isRESTModernSource&gt;&lt;isFileList&gt;false&lt;/isFileList&gt;&lt;handleSpecialChars&gt;false&lt;/handleSpecialChars&gt;&lt;frsAsset&gt;false&lt;/frsAsset&gt;&lt;dynamicFileName&gt;false&lt;/dynamicFileName&gt;&lt;currentlyProcessedFileName&gt;false&lt;/currentlyProcessedFileName&gt;&lt;overriddenFields/&gt;&lt;tgtObjectAttributes/&gt;&lt;runtimeParameterData&gt;&lt;isConnectionRuntimeParameter&gt;false&lt;/isConnectionRuntimeParameter&gt;&lt;isObjectRuntimeParameter&gt;false&lt;/isObjectRuntimeParameter&gt;&lt;/runtimeParameterData&gt;&lt;/parameter&gt;&lt;/parameters&gt;&lt;verbose&gt;false&lt;/verbose&gt;&lt;lastRunTime&gt;2020-10-08T07:36:21-04:00&lt;/lastRunTime&gt;&lt;mappingId&gt;010F5X170000000000ZZ&lt;/mappingId&gt;&lt;shortDescription&gt;PPM_INT_088- This mapping task is used to decrypt ...&lt;/shortDescription&gt;&lt;sessionProperties&gt;&lt;entry&gt;&lt;key&gt;Stop on errors&lt;/key&gt;&lt;value&gt;1&lt;/value&gt;&lt;/entry&gt;&lt;/sessionProperties&gt;&lt;sequences/&gt;&lt;inOutParameters&gt;&lt;inOutParameter&gt;&lt;id&gt;-1&lt;/id&gt;&lt;name&gt;FileName&lt;/name&gt;&lt;description/&gt;&lt;initialValue&gt;FileNameReplace&lt;/initialValue&gt;&lt;datatype&gt;STRING&lt;/datatype&gt;&lt;precision&gt;200&lt;/precision&gt;&lt;scale&gt;0&lt;/scale&gt;&lt;retentionPolicy&gt;ON_SUCCESS_OR_WARNING&lt;/retentionPolicy&gt;&lt;aggregationType&gt;MAX&lt;/aggregationType&gt;&lt;currentValue&gt;FileNameReplace&lt;/currentValue&gt;&lt;/inOutParameter&gt;&lt;/inOutParameters&gt;&lt;enableCrossSchemaPushdown&gt;true&lt;/enableCrossSchemaPushdown&gt;&lt;enableParallelRun&gt;true&lt;/enableParallelRun&gt;&lt;autoTunedApplied&gt;false&lt;/autoTunedApplied&gt;&lt;autoTunedAppliedType&gt;NONE&lt;/autoTunedAppliedType&gt;&lt;paramFileType&gt;PARAM_FILE_LOCAL&lt;/paramFileType&gt;&lt;parameterFileEncoding&gt;UTF-8&lt;/parameterFileEncoding&gt;&lt;connRuntimeAttrs/&gt;&lt;serverlessProperties/&gt;&lt;/mtTask&gt;"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">MappingTaskResponse</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$ServerURL}/api/v2/mttask"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Accept">application/xml</header>
+                           <header name="Content-Type">application/xml</header>
+                           <header name="icSessionId">{$icSessionId}</header>
+                        </httpHeaders>
+                        <body>{$CreateMCTRequest}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="CreateMappingResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">MappingTaskResponse</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="DeleteMappingTask"
+                       maxRedirects="100"
+                       name="DeleteMappingTask"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="MCTID"
+                                nogen="true"
+                                required="false"
+                                testWith="010F5X0Z0000000001GI"
+                                type="string"/>
+                     <parameter name="ServerURL"
+                                nogen="true"
+                                required="false"
+                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                type="string"/>
+                     <parameter name="icSessionId"
+                                nogen="true"
+                                required="false"
+                                testWith="7LyLGFirV0igx4h4Wajda2"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$ServerURL}/api/v2/mttask/{$MCTID}"
+                                        verb="DELETE">
+                        <httpHeaders>
+                           <header name="icSessionId">{$icSessionId}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="GetTaskflow"
+                       maxRedirects="100"
+                       name="GetTaskflow"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="ServerURL"
+                                required="false"
+                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                type="string"/>
+                     <parameter name="icSessionId"
+                                required="false"
+                                testWith="8DBxxUcqhqZg633IqmYqQp"
+                                type="string"/>
+                     <parameter name="TaskflowName"
+                                required="false"
+                                testWith="TF-Ceridian-PayrollData"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$ServerURL}/api/v2/workflow/name/{$TaskflowName}"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="icSessionId">{$icSessionId}</header>
+                           <header name="Accept">application/xml</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="GetTaskflowResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">TaskflowResponse</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="CreateTaskFlow"
+                       maxRedirects="100"
+                       name="CreateTaskFlow"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="ServerURL"
+                                nogen="true"
+                                required="false"
+                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                type="string"/>
+                     <parameter name="icSessionId"
+                                nogen="true"
+                                required="false"
+                                testWith="0gAYKlhPdcLhC4MwN4vcSL"
+                                type="string"/>
+                     <parameter name="CreateTaskFlowRequest"
+                                required="false"
+                                testWith="&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;&#xA;&lt;workflow&gt;&#xA;    &lt;id&gt;010F5X0N00000000000E&lt;/id&gt;&#xA;    &lt;orgId&gt;010F5X&lt;/orgId&gt;&#xA;    &lt;name&gt;TF-Ceridian-PayrollData-12345&lt;/name&gt;&#xA;    &lt;description&gt;FIN_INT_035 - Mapping task to process the Ceridian Payroll DataFIN_INT_035 - Task Flow to process the Ceridian Payroll Data&lt;/description&gt;&#xA;    &lt;createTime&gt;2020-01-16T07:50:40.000Z&lt;/createTime&gt;&#xA;    &lt;updateTime&gt;2020-02-17T04:46:02.000Z&lt;/updateTime&gt;&#xA;    &lt;createdBy&gt;pmahendran&lt;/createdBy&gt;&#xA;    &lt;updatedBy&gt;pmahendran&lt;/updatedBy&gt;&#xA;    &lt;maxLogs&gt;10&lt;/maxLogs&gt;&#xA;    &lt;tasks&gt;&#xA;        &lt;workflowTask&gt;&#xA;            &lt;name&gt;MT-Ceridian-PayrollData-Decrypt-12345&lt;/name&gt;&#xA;            &lt;stopOnError&gt;true&lt;/stopOnError&gt;&#xA;            &lt;stopOnWarning&gt;false&lt;/stopOnWarning&gt;&#xA;            &lt;taskId&gt;010F5X0Z0000000000LK&lt;/taskId&gt;&#xA;            &lt;type&gt;MTT&lt;/type&gt;&#xA;        &lt;/workflowTask&gt;&#xA;        &lt;workflowTask&gt;&#xA;            &lt;name&gt;MT-Ceridian-Payroll-JournalEntries-12345&lt;/name&gt;&#xA;            &lt;stopOnError&gt;true&lt;/stopOnError&gt;&#xA;            &lt;stopOnWarning&gt;false&lt;/stopOnWarning&gt;&#xA;            &lt;taskId&gt;010F5X0Z0000000000GQ&lt;/taskId&gt;&#xA;            &lt;type&gt;MTT&lt;/type&gt;&#xA;        &lt;/workflowTask&gt;&#xA;    &lt;/tasks&gt;&#xA;&lt;/workflow&gt;"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">TaskflowResponse</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$ServerURL}/api/v2/workflow"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Accept">application/xml</header>
+                           <header name="Content-Type">application/xml</header>
+                           <header name="icSessionId">{$icSessionId}</header>
+                        </httpHeaders>
+                        <body>{$CreateTaskFlowRequest}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="CreateTaskFlowResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">TaskflowResponse</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="MappingTaskResponse">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="mappingId" type="string"/>
+                     <field name="agentId" type="string"/>
+                     <field name="runtimeEnvironmentId" type="string"/>
+                     <field name="inOutParameters" type="reference">
+                        <options>
+                           <option name="referenceTo">inOutParameters</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="parameterFileEncoding" type="string"/>
+                     <field name="description" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="sequences" type="string"/>
+                     <field name="orgId" type="string"/>
+                     <field name="enableCrossSchemaPushdown" type="string"/>
+                     <field name="autoTunedAppliedType" type="string"/>
+                     <field name="id" type="string"/>
+                     <field name="sessionProperties" type="reference">
+                        <options>
+                           <option name="referenceTo">sessionProperties</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="enableParallelRun" type="string"/>
+                     <field name="connRuntimeAttrs" type="string"/>
+                     <field name="autoTunedApplied" type="string"/>
+                     <field name="updatedBy" type="string"/>
+                     <field name="updateTime" type="string"/>
+                     <field name="shortDescription" type="string"/>
+                     <field name="verbose" type="string"/>
+                     <field name="lastRunTime" type="double"/>
+                     <field name="serverlessProperties" type="string"/>
+                     <field name="createTime" type="string"/>
+                     <field name="createdBy" type="string"/>
+                     <field name="paramFileType" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="parameters" type="objectlist">
+                        <options>
+                           <option name="referenceTo">parameters</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="maxLogs" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="inOutParameters">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="inOutParameter" type="reference">
+                        <options>
+                           <option name="referenceTo">inOutParameter</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="sessionProperties">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="Stoponerrors" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="parameter">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="currentlyProcessedFileName" type="string"/>
+                     <field name="naturalOrder" type="string"/>
+                     <field name="extendedObject" type="reference">
+                        <options>
+                           <option name="referenceTo">extendedObject</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="type" type="string"/>
+                     <field name="customFuncCfg" type="reference">
+                        <options>
+                           <option name="referenceTo">customFuncCfg</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="frsAsset" type="string"/>
+                     <field name="tgtObjectAttributes" type="string"/>
+                     <field name="handleSpecialChars" type="string"/>
+                     <field name="runtimeAttrs" type="string"/>
+                     <field name="newObject" type="string"/>
+                     <field name="isFileList" type="boolean"/>
+                     <field name="dynamicFileName" type="string"/>
+                     <field name="id" type="int"/>
+                     <field name="tgtFieldRefs" type="string"/>
+                     <field name="newFlatFile" type="string"/>
+                     <field name="isRESTModernSource" type="boolean"/>
+                     <field name="bulkApiDBTarget" type="string"/>
+                     <field name="sourceConnectionId" type="string"/>
+                     <field name="runtimeParameterData" type="reference">
+                        <options>
+                           <option name="referenceTo">runtimeParameterData</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="showBusinessNames" type="string"/>
+                     <field name="label" type="string"/>
+                     <field name="targetUpdateColumns" type="string"/>
+                     <field name="overriddenFields" type="string"/>
+                     <field name="truncateTarget" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="uiProperties" type="reference">
+                        <options>
+                           <option name="referenceTo">uiProperties</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="targetObject" type="string"/>
+                     <field name="tgtFFAttrs" type="reference">
+                        <options>
+                           <option name="referenceTo">tgtFFAttrs</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="targetObjectLabel" type="string"/>
+                     <field name="targetConnectionId" type="string"/>
+                     <field name="operationType" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="extendedObject">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="sortFields" type="string"/>
+                     <field name="filters" type="objectlist">
+                        <options>
+                           <option name="referenceTo">filters</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="type" type="string"/>
+                     <field name="object" type="reference">
+                        <options>
+                           <option name="referenceTo">object</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="filters">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="field" type="string"/>
+                     <field name="objectName" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="value" type="string"/>
+                     <field name="operator" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="object">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="metadataUpdated" type="string"/>
+                     <field name="children" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="label" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="relations" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="customFuncCfg">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="outputFields" type="string"/>
+                     <field name="id" type="int"/>
+                     <field name="type" type="string"/>
+                     <field name="inputMap" type="string"/>
+                     <field name="connections" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="runtimeParameterData">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="isObjectRuntimeParameter" type="boolean"/>
+                     <field name="type" type="string"/>
+                     <field name="isConnectionRuntimeParameter" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="uiProperties">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="isMsrcFilterParameterized" type="boolean"/>
+                     <field name="connectionParameterized" type="string"/>
+                     <field name="visible" type="string"/>
+                     <field name="isMsrcSortParameterized" type="boolean"/>
+                     <field name="objectParameterized" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="tgtFFAttrs">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="escapeChar" type="string"/>
+                     <field name="delimiter" type="string"/>
+                     <field name="id" type="int"/>
+                     <field name="type" type="string"/>
+                     <field name="textQualifier" type="string"/>
+                     <field name="headerLineNo" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="inOutParameter">
+                  <description/>
+                  <detail>
+                     <field name="id" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="description" type="string"/>
+                     <field name="initialValue" type="string"/>
+                     <field name="datatype" type="string"/>
+                     <field name="precision" type="string"/>
+                     <field name="scale" type="string"/>
+                     <field name="retentionPolicy" type="string"/>
+                     <field name="aggregationType" type="string"/>
+                     <field name="currentValue" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="TaskflowResponse">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="updatedBy" type="string"/>
+                     <field name="createTime" type="string"/>
+                     <field name="createdBy" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="description" type="string"/>
+                     <field name="updateTime" type="string"/>
+                     <field name="id" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="orgId" type="string"/>
+                     <field name="tasks" type="objectlist">
+                        <options>
+                           <option name="referenceTo">tasks</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="maxLogs" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="tasks">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="stopOnError" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="stopOnWarning" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="taskId" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="parameters">
+                  <description/>
+                  <detail>
+                     <field name="parameter" type="reference">
+                        <options>
+                           <option name="referenceTo">parameter</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>7A9Y9fjWA41b209r73IlE6</types1:GUID>
+      <types1:DisplayName>SC-IICSRestAPIDynamicMCT</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:41:19.923Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

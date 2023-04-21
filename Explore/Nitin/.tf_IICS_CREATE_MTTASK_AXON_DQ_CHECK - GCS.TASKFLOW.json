@@ -1,0 +1,139 @@
+{
+  "objectInfo" : {
+    "id" : "8dIdY3Kzpe2fzF00GGFm69",
+    "name" : "tf_IICS_CREATE_MTTASK_AXON_DQ_CHECK - GCS",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5hJdypKwKBqRi92-gt-9349814-2023-04-13T09:25:31.917Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Task flow to query Object Catalog and invoke mapping task to create acquire Axon E2E ETL work table mapping task.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "7myO5LgDvHigyV1aR9FoWC",
+    "name" : "mt_3800_UPDATE_AXON_DQ_CONFIG",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0Z0000000000HR"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task to update [AcqIQ].[ctrl].[AXON_DQ_CONFIG] table.\r\n",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  }, {
+    "id" : "3lPuy60Gh31geaY85hWkCD",
+    "name" : "mt_3800_CREATE_IICS_MAPPING_TASK_AXON_DQ",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0Z0000000000HT"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task to create or update IICS mapping task utilizing ctrl.object_catalog tabel data.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  }, {
+    "id" : "84d5MIVVGDDe0dV5qxeRYc",
+    "name" : "mt_3800_LIST_IICS_AXON_DQ_CREATE_MTTASK_FAULT",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0Z0000000000HQ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task to query  [AcqIQ].[work].[IICS_AXON_DQ_CREATE_MTTASK_FAULT] and output to Flat File.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  }, {
+    "id" : "efu1kZ05N81kCnNd91XXS9",
+    "name" : "mt_3800_LIST_AXON_DQ_CONFIG",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0Z0000000000HP"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task to query  [AcqIQ].[ctrl].[vw_LIST_AXON_DQ_CONFIG] and output to Flat File.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  }, {
+    "id" : "fhIxeaGo6o9knUfBxOgSC2",
+    "name" : "mt_3800_LOAD_AXON_DQ_CONFIG_FF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0Z0000000000HS"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task to truncate and load AXON_DQ_CONFIG.csv file.\r\n",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Nitin"
+  } ]
+}

@@ -1,0 +1,511 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>puoJ49ARJi4tciS-gt-588793-2022-09-13T09:03:02.517Z::pd.xml</types1:EntryId>
+      <types1:Name>PF_Dynamic_MCT</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Dynamic</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:WALL-MWINT-GRP,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nalex@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2022-09-13T09:03:03Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="PF_Dynamic_MCT"
+                  name="PF_Dynamic_MCT"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Dynamic</description>
+            <tags>.agent:WALL-MWINT-GRP,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="MCTName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ProcessID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="FileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="PrivateKeyPath" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="PassPhrase" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="sourceConnectionId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="MTWriter" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:FileWriteTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5fMmmW3AzlkkTAYCNSxWe4</option>
+                  </options>
+               </field>
+               <field description="" name="Param" type="reference">
+                  <options>
+                     <option name="referenceTo">C-IICSRestAPIDynamicMCT:inOutParameters</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8SzSrOKEXWDcE275EtVYMA</option>
+                  </options>
+               </field>
+               <field description="" name="MT" type="reference">
+                  <options>
+                     <option name="referenceTo">C-IICSRestAPIDynamicMCT:MappingTaskResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8SzSrOKEXWDcE275EtVYMA</option>
+                  </options>
+               </field>
+               <field description="" name="LoginRetryCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="GetMCTRetryCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="CreateMCTRetryCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="RunMCTRetryCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="DeleteRetryCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="MaxRetryCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">3</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>WALL-MWINT-GRP</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kk5zl44g" targetId="kk6yga6s"/>
+               </start>
+               <eventContainer id="kk6yga6s">
+                  <service id="kjvqnpvd">
+                     <title>Login</title>
+                     <serviceName>C-IICSRestAPIDynamicMCT:Login</serviceName>
+                     <serviceGUID>8SzSrOKEXWDcE275EtVYMA</serviceGUID>
+                     <serviceInput/>
+                  </service>
+                  <flow id="kk6yga6u">
+                     <link id="kk6yga6v" targetId="kk6yga6s" type="containerLink"/>
+                  </flow>
+                  <flow id="kk6yga6x">
+                     <assignment id="kk6yga78">
+                        <title>Assignment to RetryCount</title>
+                        <operation source="formula" to="temp.LoginRetryCount">
+                           <expression language="XQuery">$temp.LoginRetryCount + 1</expression>
+                        </operation>
+                        <link id="kk6yga7w" targetId="kk6yga7v"/>
+                     </assignment>
+                     <container id="kk6yga7v" type="exclusive">
+                        <title>LoginRetryCount</title>
+                        <flow id="kk6yga7z">
+                           <jumpTo id="kk6yga9i">
+                              <link id="kk6yga9j" targetId="kk6yga6s"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="kk6yga82">
+                           <throw id="kk6yga8k">
+                              <title>Throw 1</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="kk6yga7y" targetId="kk6yga7z" type="containerLink">
+                           <condition source="formula">
+                              <function name="less-or-equals">
+                                 <arg name="left">{$temp.LoginRetryCount}</arg>
+                                 <arg name="right">{$temp.MaxRetryCount }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kk6yga81" targetId="kk6yga82" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="kk6yga6t" targetId="kk6yga6u" type="containerLink"/>
+                  <link id="kjvqnpvl" targetId="kk6ygaae"/>
+                  <events>
+                     <catch faultField="faultInfo" id="kk6yga6r" interrupting="true">
+                        <link id="kk6yga6w" targetId="kk6yga6x" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kk6ygaae">
+                  <service id="kjvqnpvk">
+                     <title>GetMappingTask</title>
+                     <serviceName>C-IICSRestAPIDynamicMCT:GetMappingTask</serviceName>
+                     <serviceGUID>8SzSrOKEXWDcE275EtVYMA</serviceGUID>
+                     <serviceInput>
+                        <parameter name="ServerURL" source="constant">{$output.serverUrl}</parameter>
+                        <parameter name="icSessionId" source="constant">{$output.icSessionId}</parameter>
+                        <parameter name="MCTName" source="constant">{$input.MCTName}</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="kk6ygaag">
+                     <link id="kk6ygaah" targetId="kk6ygaae" type="containerLink"/>
+                  </flow>
+                  <flow id="kk6ygaaj">
+                     <assignment id="kk6ygaaq">
+                        <title>Assignment to GetMCTRetryCount</title>
+                        <operation source="formula" to="temp.GetMCTRetryCount">
+                           <expression language="XQuery">$temp.GetMCTRetryCount + 1</expression>
+                        </operation>
+                        <link id="kk6ygaax" targetId="kk6ygaaw"/>
+                     </assignment>
+                     <container id="kk6ygaaw" type="exclusive">
+                        <title>GetMCTRetryCount</title>
+                        <flow id="kk6ygaaz">
+                           <jumpTo id="kk6ygabs">
+                              <link id="kk6ygabt" targetId="kk6ygaae"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="kk6ygab2">
+                           <throw id="kk6ygac4">
+                              <title>Throw 2</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="kk6ygaay" targetId="kk6ygaaz" type="containerLink">
+                           <condition source="formula">
+                              <function name="less-or-equals">
+                                 <arg name="left">{$temp.GetMCTRetryCount}</arg>
+                                 <arg name="right">{$temp.MaxRetryCount }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kk6ygab1" targetId="kk6ygab2" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="kk6ygaaf" targetId="kk6ygaag" type="containerLink"/>
+                  <link id="kk5nntug" targetId="kjvsot3z"/>
+                  <events>
+                     <catch faultField="faultInfo" id="kk6ygaad" interrupting="true">
+                        <link id="kk6ygaai" targetId="kk6ygaaj" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kk6ygacs">
+                  <service id="kjvr106t">
+                     <title>CreateMappingTask</title>
+                     <serviceName>C-IICSRestAPIDynamicMCT:CreateMappingTask</serviceName>
+                     <serviceGUID>8SzSrOKEXWDcE275EtVYMA</serviceGUID>
+                     <serviceInput>
+                        <parameter name="ServerURL" source="constant">{$output.serverUrl}</parameter>
+                        <parameter name="icSessionId" source="constant">{$output.icSessionId}</parameter>
+                        <parameter name="CreateMCTRequest" source="field">output.GetMappingTaskResponse</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="kk6ygacu">
+                     <link id="kk6ygacv" targetId="kk6ygacs" type="containerLink"/>
+                  </flow>
+                  <flow id="kk6ygacx">
+                     <assignment id="kk6ygad5">
+                        <title>Assignment to CreateMCTRetryCount</title>
+                        <operation source="formula" to="temp.CreateMCTRetryCount">
+                           <expression language="XQuery">$temp.CreateMCTRetryCount + 1</expression>
+                        </operation>
+                        <link id="kk6ygaf1" targetId="kk6ygaf0"/>
+                     </assignment>
+                     <container id="kk6ygaf0" type="exclusive">
+                        <title>CreateMCTRetryCount</title>
+                        <flow id="kk6ygaf3">
+                           <jumpTo id="kk6ygag0">
+                              <link id="kk6ygag1" targetId="kk6ygacs"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="kk6ygaf6">
+                           <throw id="kk6ygage">
+                              <title>Throw 3</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="kk6ygaf2" targetId="kk6ygaf3" type="containerLink">
+                           <condition source="formula">
+                              <function name="less-or-equals">
+                                 <arg name="left">{$temp.CreateMCTRetryCount}</arg>
+                                 <arg name="right">{$temp.MaxRetryCount }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kk6ygaf5" targetId="kk6ygaf6" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="kk6ygact" targetId="kk6ygacu" type="containerLink"/>
+                  <link id="kjvsot5u" targetId="kk6ygah6"/>
+                  <events>
+                     <catch faultField="faultInfo" id="kk6ygacr" interrupting="true">
+                        <link id="kk6ygacw" targetId="kk6ygacx" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kk6ygah6">
+                  <service id="kjvsot5t">
+                     <title>Run Cloud Task</title>
+                     <serviceName>ICSExecuteTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="formula">
+                           <expression language="XQuery">concat($input.MCTName,'-',$input.ProcessID,' [MCT]')</expression>
+                        </parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Fail on Cloud Task Errors" source="constant">true</parameter>
+                        <parameter name="GUID" source="constant"/>
+                     </serviceInput>
+                  </service>
+                  <flow id="kk6ygah8">
+                     <link id="kk6ygah9" targetId="kk6ygah6" type="containerLink"/>
+                  </flow>
+                  <flow id="kk6ygahb">
+                     <assignment id="kk6ygahk">
+                        <title>Assignment to RunMCTRetryCount</title>
+                        <operation source="formula" to="temp.RunMCTRetryCount">
+                           <expression language="XQuery">$temp.RunMCTRetryCount + 1</expression>
+                        </operation>
+                        <link id="kk6ygaip" targetId="kk6ygaio"/>
+                     </assignment>
+                     <container id="kk6ygaio" type="exclusive">
+                        <title>RunMCTRetryCount</title>
+                        <flow id="kk6ygair">
+                           <jumpTo id="kk6ygajs">
+                              <link id="kk6ygajt" targetId="kk6ygah6"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="kk6ygaiu">
+                           <service id="kk6ygak8">
+                              <title>getErrorInfo</title>
+                              <serviceName>C-getErrorInfo:getErrorInfo</serviceName>
+                              <serviceGUID>4Ui5Xg4PM06g7iy0lSId2J</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="taskId" source="field" updatable="true">output.CreateMappingResponse[1]/id</parameter>
+                                 <parameter name="rowLimit" source="constant">1</parameter>
+                              </serviceInput>
+                              <link id="kk6ygam5" targetId="kk6ygam4"/>
+                           </service>
+                           <throw id="kk6ygam4">
+                              <title>Throw 4</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="kk6ygaiq" targetId="kk6ygair" type="containerLink">
+                           <condition source="formula">
+                              <function name="less-or-equals">
+                                 <arg name="left">{$temp.RunMCTRetryCount}</arg>
+                                 <arg name="right">{$temp.MaxRetryCount }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kk6ygait" targetId="kk6ygaiu" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="kk6ygah7" targetId="kk6ygah8" type="containerLink"/>
+                  <link id="kk6yga6o" targetId="kk6yga6n"/>
+                  <events>
+                     <catch faultField="faultInfo" id="kk6ygah5" interrupting="true">
+                        <link id="kk6ygaha" targetId="kk6ygahb" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kk6yganb">
+                  <service id="kk5zl451">
+                     <title>DeleteMappingTask</title>
+                     <serviceName>C-IICSRestAPIDynamicMCT:DeleteMappingTask</serviceName>
+                     <serviceGUID>8SzSrOKEXWDcE275EtVYMA</serviceGUID>
+                     <serviceInput>
+                        <parameter name="MCTID" source="field" updatable="true">output.CreateMappingResponse[1]/id</parameter>
+                        <parameter name="ServerURL" source="constant">{$output.serverUrl}</parameter>
+                        <parameter name="icSessionId" source="constant">{$output.icSessionId}</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="kk6ygand">
+                     <link id="kk6ygane" targetId="kk6yganb" type="containerLink"/>
+                  </flow>
+                  <flow id="kk6ygang">
+                     <assignment id="kk6yganq">
+                        <title>Assignment to DeleteRetryCount</title>
+                        <operation source="formula" to="temp.DeleteRetryCount">
+                           <expression language="XQuery">$temp.DeleteRetryCount + 1</expression>
+                        </operation>
+                        <link id="kk6ygap2" targetId="kk6ygap1"/>
+                     </assignment>
+                     <container id="kk6ygap1" type="exclusive">
+                        <title>DeleteRetryCount</title>
+                        <flow id="kk6ygap4">
+                           <jumpTo id="kk6ygaq9">
+                              <link id="kk6ygaqa" targetId="kk6yganb"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="kk6ygap7">
+                           <throw id="kk6ygaqr">
+                              <title>Throw 5</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="kk6ygap3" targetId="kk6ygap4" type="containerLink">
+                           <condition source="formula">
+                              <function name="less-or-equals">
+                                 <arg name="left">{$temp.DeleteRetryCount}</arg>
+                                 <arg name="right">{$temp.MaxRetryCount }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kk6ygap6" targetId="kk6ygap7" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="kk6yganc" targetId="kk6ygand" type="containerLink"/>
+                  <link id="kk5zl453" targetId="c"/>
+                  <events>
+                     <catch faultField="faultInfo" id="kk6ygana" interrupting="true">
+                        <link id="kk6yganf" targetId="kk6ygang" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <assignment id="kjvsot3z">
+                  <title>Assignment to name, output.GetMappingTaskResponse[1]/inOutParameters</title>
+                  <operation source="formula" to="output.GetMappingTaskResponse[1]/name">
+                     <expression language="XQuery">concat($input.MCTName,'-',$input.ProcessID)</expression>
+                  </operation>
+                  <operation source="formula" to="output.GetMappingTaskResponse[1]/inOutParameters">
+                     <expression language="XQuery">&lt;inOutParameters&gt;
+      &lt;inOutParameter&gt;
+         &lt;id&gt;-1&lt;/id&gt;
+         &lt;name&gt;Filename&lt;/name&gt;
+         &lt;description/&gt;
+         &lt;initialValue&gt;{$input.FileName }&lt;/initialValue&gt;
+         &lt;datatype&gt;STRING&lt;/datatype&gt;
+         &lt;precision&gt;255&lt;/precision&gt;
+         &lt;scale&gt;0&lt;/scale&gt;
+         &lt;retentionPolicy&gt;ON_SUCCESS_OR_WARNING&lt;/retentionPolicy&gt;
+         &lt;aggregationType&gt;MAX&lt;/aggregationType&gt;
+         &lt;currentValue&gt;{$input.FileName }&lt;/currentValue&gt;
+      &lt;/inOutParameter&gt;
+      &lt;inOutParameter&gt;
+         &lt;id&gt;-1&lt;/id&gt;
+         &lt;name&gt;PrivateKeyPath&lt;/name&gt;
+         &lt;description/&gt;
+         &lt;initialValue&gt;{$input.PrivateKeyPath }&lt;/initialValue&gt;
+         &lt;datatype&gt;STRING&lt;/datatype&gt;
+         &lt;precision&gt;255&lt;/precision&gt;
+         &lt;scale&gt;0&lt;/scale&gt;
+         &lt;retentionPolicy&gt;ON_SUCCESS_OR_WARNING&lt;/retentionPolicy&gt;
+         &lt;aggregationType&gt;MAX&lt;/aggregationType&gt;
+         &lt;currentValue&gt;{$input.PrivateKeyPath }&lt;/currentValue&gt;
+      &lt;/inOutParameter&gt;
+      &lt;inOutParameter&gt;
+         &lt;id&gt;-1&lt;/id&gt;
+         &lt;name&gt;PassPhrase&lt;/name&gt;
+         &lt;description/&gt;
+         &lt;initialValue&gt;{$input.PassPhrase }&lt;/initialValue&gt;
+         &lt;datatype&gt;STRING&lt;/datatype&gt;
+         &lt;precision&gt;255&lt;/precision&gt;
+         &lt;scale&gt;0&lt;/scale&gt;
+         &lt;retentionPolicy&gt;ON_SUCCESS_OR_WARNING&lt;/retentionPolicy&gt;
+         &lt;aggregationType&gt;MAX&lt;/aggregationType&gt;
+         &lt;currentValue&gt;{$input.PassPhrase }&lt;/currentValue&gt;
+      &lt;/inOutParameter&gt;
+&lt;/inOutParameters&gt;</expression>
+                  </operation>
+                  <link id="kk5nnu02" targetId="kk6ygacs"/>
+               </assignment>
+               <milestone id="kk6yga6n">
+                  <title>Milestone 1</title>
+                  <link id="kk6yga6p" targetId="kk6yganb"/>
+               </milestone>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>5b104f19-7f0b-4a9e-ab1b-afa0935b98ac</ns1:Id>
+               <ns1:Name>Test</ns1:Name>
+               <ns1:CreatedBy>nalex@informatica.com</ns1:CreatedBy>
+               <ns1:CreationDate>2022-09-13T09:03:03Z</ns1:CreationDate>
+               <ns1:ModifiedBy>nalex@informatica.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2022-09-13T09:03:03Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+	 "MCTName": "MT-Common-Decrypt",
+	 "ProcessID": "111911",
+	 "FileName": "AP_paymentrequest_nexantiepm_20210722_210000.csv.pgp",
+	 "PrivateKeyPath": "\\njresources\integration\KeyPairs\NonProd\IEPM\Inbound\Nexant_IEPM_NonProd_Private.asc",
+	 "PassPhrase": "PassKey1",
+	 "sourceConnectionId": "010F5X0B000000000094"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>6URKAXC6xQ5bNrX806cjGc</types1:GUID>
+      <types1:DisplayName>PF_Dynamic_MCT</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:41:59.937Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

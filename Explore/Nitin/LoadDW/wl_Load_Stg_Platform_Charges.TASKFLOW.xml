@@ -1,0 +1,839 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pgneO0fXs3C6LlR-gt-12612727-2023-03-15T07:26:39.247Z::tf.xml</types1:EntryId>
+      <types1:Name>wl_Load_Stg_Platform_Charges</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>tanvee@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2023-03-15T07:26:39Z</types1:CreationDate>
+      <types1:ModifiedBy>tanvee@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2023-03-15T08:11:19Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="wl_Load_Stg_Platform_Charges"
+                   name="wl_Load_Stg_Platform_Charges"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="ParamLoadNetworkChargeSchedules" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description=""
+                      name="s_Load_stg_Platform_Charges_AccountChargeSchedules"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-stg-Platform-Charges-AccountChargeSchedules</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_Platform_Charges_CompanyChargeSchedules"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-stg-Platform-Charges-CompanyChargeSchedules</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_Platform_Charges_WrapProviderChargeSchedules"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-stg-Platform-Charges-WrapProviderChargeSchedules</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_Platform_Charges_ChargeSchedules"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:s-Load-stg-Platform-Charges-ChargeSchedules</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_Platform_Charges_NetworkChargeSchedules"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-Platform-Charges-NetworkChargeSchedules</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_Platform_Charges_SubAccountChargeSchedules"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-Platform-Charges-SubAccountChargeSchedules</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="s_Load_stg_Platform_Charges_AdviserChargeSchedules"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:s-Load-stg-Platform-Charges-AdviserChargeSchedules</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="le5kjfnp" targetId="le5kjfoc"/>
+               </start>
+               <eventContainer id="le5kjfoc">
+                  <service id="le5kjfno">
+                     <title>s_Load_stg_Platform_Charges_AccountChargeSchedules</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Platform_Charges_AccountChargeSchedules</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">4cP3EmMEtcDdzsuuIXQqoK</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="s-Load-stg-Platform-Charges-AccountChargeSchedules">temp.s_Load_stg_Platform_Charges_AccountChargeSchedules</operation>
+                           <operation source="constant"
+                                      to="s-Load-stg-Platform-Charges-AccountChargeSchedules/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="s-Load-stg-Platform-Charges-AccountChargeSchedules/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="le5kjfpg" targetId="le5kjfq6"/>
+                  <events>
+                     <catch faultField="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/fault"
+                            id="le5kjfoa"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.s_Load_stg_Platform_Charges_AccountChargeSchedules/fault"
+                            id="le5kjfob"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="le5kjfq6">
+                  <service id="le5kjfpf">
+                     <title>s_Load_stg_Platform_Charges_CompanyChargeSchedules</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Platform_Charges_CompanyChargeSchedules</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">h9h57W3RoGmlk5FwmkpbI2</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="s-Load-stg-Platform-Charges-CompanyChargeSchedules">temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules</operation>
+                           <operation source="constant"
+                                      to="s-Load-stg-Platform-Charges-CompanyChargeSchedules/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="s-Load-stg-Platform-Charges-CompanyChargeSchedules/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/inout/ParamStepComplete">ParamStepComplete</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="le5kjfrg" targetId="le5kjfs3"/>
+                  <events>
+                     <catch faultField="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/fault"
+                            id="le5kjfq4"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.s_Load_stg_Platform_Charges_CompanyChargeSchedules/fault"
+                            id="le5kjfq5"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="le5kjfs3">
+                  <service id="le5kjfrf">
+                     <title>s_Load_stg_Platform_Charges_WrapProviderChargeSchedules</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Platform_Charges_WrapProviderChargeSchedules</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">7TTttdHBuwLeuh0MrxiAkI</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field"
+                                      to="s-Load-stg-Platform-Charges-WrapProviderChargeSchedules">temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules</operation>
+                           <operation source="constant"
+                                      to="s-Load-stg-Platform-Charges-WrapProviderChargeSchedules/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="s-Load-stg-Platform-Charges-WrapProviderChargeSchedules/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="le5kjft7" targetId="le5kjftu"/>
+                  <events>
+                     <catch faultField="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/fault"
+                            id="le5kjfs1"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.s_Load_stg_Platform_Charges_WrapProviderChargeSchedules/fault"
+                            id="le5kjfs2"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="le5kjftu">
+                  <service id="le5kjft6">
+                     <title>s_Load_stg_Platform_Charges_ChargeSchedules</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Platform_Charges_ChargeSchedules</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">973dW9EGr8lhLfyyQYs4ig</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="s-Load-stg-Platform-Charges-ChargeSchedules">temp.s_Load_stg_Platform_Charges_ChargeSchedules</operation>
+                           <operation source="constant"
+                                      to="s-Load-stg-Platform-Charges-ChargeSchedules/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_stg_Platform_Charges_ChargeSchedules[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                           <operation source="constant"
+                                      to="s-Load-stg-Platform-Charges-ChargeSchedules/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                           <operation source="constant"
+                                      to="temp.s_Load_stg_Platform_Charges_ChargeSchedules[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.s_Load_stg_Platform_Charges_ChargeSchedules/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="le5kjfuy" targetId="le5kjfux"/>
+                  <events>
+                     <catch faultField="temp.s_Load_stg_Platform_Charges_ChargeSchedules/fault"
+                            id="le5kjfts"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.s_Load_stg_Platform_Charges_ChargeSchedules/fault"
+                            id="le5kjftt"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="le5kjfux" type="exclusive">
+                  <title>Decision 1</title>
+                  <flow id="ley92oky">
+                     <eventContainer id="ley92olq">
+                        <service id="ley92ol5">
+                           <title>s_Load_stg_Platform_Charges_NetworkChargeSchedules</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Platform_Charges_NetworkChargeSchedules</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">6CGHaXggw2ydnrwzKXuFkV</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-Platform-Charges-NetworkChargeSchedules">temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Platform-Charges-NetworkChargeSchedules/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Platform-Charges-NetworkChargeSchedules/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="ley92olw" targetId="ley92omh"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/fault"
+                                  id="le5kjfwf"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_Platform_Charges_NetworkChargeSchedules/fault"
+                                  id="le5kjfwg"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="ley92omh">
+                        <service id="ley92olv">
+                           <title>s_Load_stg_Platform_Charges_SubAccountChargeSchedules</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Platform_Charges_SubAccountChargeSchedules</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">2H5ZS9l3vmRcbp7nQ7yry7</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field"
+                                            to="s-Load-stg-Platform-Charges-SubAccountChargeSchedules">temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Platform-Charges-SubAccountChargeSchedules/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Platform-Charges-SubAccountChargeSchedules/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="ley92omn" targetId="ley92onb"/>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/fault"
+                                  id="le5kjfyc"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_Platform_Charges_SubAccountChargeSchedules/fault"
+                                  id="le5kjfyd"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="ley92onb">
+                        <service id="ley92omm">
+                           <title>s_Load_stg_Platform_Charges_AdviserChargeSchedules</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">s_Load_stg_Platform_Charges_AdviserChargeSchedules</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">h3sIfdTISGpl9NvNFfPHaP</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="s-Load-stg-Platform-Charges-AdviserChargeSchedules">temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Platform-Charges-AdviserChargeSchedules/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules[1]/taskProperties[1]/parameterFileName">{$input.ParamFile}</operation>
+                                 <operation source="constant"
+                                            to="s-Load-stg-Platform-Charges-AdviserChargeSchedules/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                                 <operation source="constant"
+                                            to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules[1]/taskProperties[1]/parameterFileDir">{$input.ParamFileDir}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/inout/ParamAdminStepID">ParamAdminStepID</operation>
+                              <operation source="field"
+                                         to="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/inout/ParamStepComplete">ParamStepComplete</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/fault"
+                                  id="le5kjg0c"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.s_Load_stg_Platform_Charges_AdviserChargeSchedules/fault"
+                                  id="le5kjg0d"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="ley92okz" targetId="le5kjfux" type="containerLink"/>
+                  </flow>
+                  <flow id="ley92ol0">
+                     <link id="ley92ol1" targetId="le5kjfux" type="containerLink"/>
+                  </flow>
+                  <link id="ley92okw" targetId="ley92oky" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$input.ParamLoadNetworkChargeSchedules}</arg>
+                           <arg name="right">TRUE{$input.ParamLoadNetworkChargeSchedules} {$input.ParamLoadNetworkChargeSchedules} </arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="ley92okx" targetId="ley92ol0" type="containerLink"/>
+                  <link id="ley92oml" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Platform-Charges-AccountChargeSchedules"
+                              isByCopy="true"
+                              name="s-Load-stg-Platform-Charges-AccountChargeSchedules">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Platform-Charges-CompanyChargeSchedules"
+                              isByCopy="true"
+                              name="s-Load-stg-Platform-Charges-CompanyChargeSchedules">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Platform-Charges-WrapProviderChargeSchedules"
+                              isByCopy="true"
+                              name="s-Load-stg-Platform-Charges-WrapProviderChargeSchedules">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Platform-Charges-ChargeSchedules"
+                              isByCopy="true"
+                              name="s-Load-stg-Platform-Charges-ChargeSchedules">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Platform-Charges-NetworkChargeSchedules"
+                              isByCopy="true"
+                              name="s-Load-stg-Platform-Charges-NetworkChargeSchedules">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Platform-Charges-SubAccountChargeSchedules"
+                              isByCopy="true"
+                              name="s-Load-stg-Platform-Charges-SubAccountChargeSchedules">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="s-Load-stg-Platform-Charges-AdviserChargeSchedules"
+                              isByCopy="true"
+                              name="s-Load-stg-Platform-Charges-AdviserChargeSchedules">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>7EtSLAWkMTpjBSK2VZsBkx</types1:GUID>
+      <types1:DisplayName>wl_Load_Stg_Platform_Charges</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:41:59.931Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

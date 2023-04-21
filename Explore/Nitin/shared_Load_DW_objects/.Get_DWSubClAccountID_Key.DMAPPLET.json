@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "gsaYjI9plOIiBYfwygUQkM",
+    "name" : "Get_DWSubClAccountID_Key",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR4000000000001B"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Given a SubClAccountID, go to dbo.Account_Dim and get the DW based SubClAccountID_Key",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "jJXMBYHdw4kg4JQ5VkhuKP",
+    "name" : "IsNullEmptyStr",
+    "type" : "UDF",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR41000000000007"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "NULL",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/UDF/shared_Load_DW_objects"
+  } ]
+}

@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "6WPjgpK0jLsj601EZcb4eD",
+    "name" : "shared_PWC_EDW_T",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Common shared objects auto-converted from Oracle folders",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

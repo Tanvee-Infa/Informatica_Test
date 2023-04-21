@@ -1,0 +1,46 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>lMMP5gjn9OQcjoY-gt-409177-2022-09-13T09:03:01.903Z::conn.xml</types1:EntryId>
+      <types1:Name>C-IICSRestAPIDynamicMCT</types1:Name>
+      <types1:ParentFlowIds>puoJ49ARJi4tciS-gt-588793-2022-09-13T09:03:02.517Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>Dynamic</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:WALL-MWINT-GRP</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nalex@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2022-09-13T09:03:02Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="C-IICSRestAPIDynamicMCT"
+                     label="C-IICSRestAPIDynamicMCT"
+                     name="C-IICSRestAPIDynamicMCT">
+            <description>Dynamic</description>
+            <tags>.agent:WALL-MWINT-GRP</tags>
+            <agent>WALL-MWINT-GRP</agent>
+            <attributes>
+               <attribute encrypted="true" name="IICS_Password" value=""/>
+               <attribute encrypted="false" name="IICS_Username" value="API_MCT_INT1"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_IICSRestAPIDynamicMCT/SC_IICSRestAPIDynamicMCT_svcDef.xml"
+                               guid="7A9Y9fjWA41b209r73IlE6"
+                               name="SC-IICSRestAPIDynamicMCT"
+                               supportsConnectionTest="false"
+                               uuid="86983baf-6cae-48aa-9129-93ee98b6cc07">
+               <description>Dynamic</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>8SzSrOKEXWDcE275EtVYMA</types1:GUID>
+      <types1:DisplayName>C-IICSRestAPIDynamicMCT</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-21T14:41:36.128Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
