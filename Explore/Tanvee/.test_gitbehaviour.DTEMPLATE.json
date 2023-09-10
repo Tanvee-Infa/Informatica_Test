@@ -1,0 +1,28 @@
+{
+  "objectInfo" : {
+    "id" : "23e5HyqvLgMiPMim43Frqx",
+    "name" : "test_gitbehaviour",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR170000000000T5"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "INVALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2023-09-10T20:24:44.560Z",
+  "objectRefs" : [ ]
+}
