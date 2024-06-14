@@ -1,0 +1,28 @@
+{
+  "objectInfo" : {
+    "id" : "4cM25INtUwJdT68naZAj0g",
+    "name" : "repro_sabu_04550988",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR170000000000Z2"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-06-14T16:03:51.990Z",
+  "objectRefs" : [ ]
+}
