@@ -1,0 +1,28 @@
+{
+  "objectInfo" : {
+    "id" : "kIqrT5F50sXeAIDqN4kB48",
+    "name" : "Mapping485",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR170000000002CP"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "INVALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-06-18T09:27:59.115Z",
+  "objectRefs" : [ ]
+}
