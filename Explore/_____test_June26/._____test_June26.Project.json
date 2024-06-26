@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "dkh9zkUD5SWhri2lUzVKkr",
+    "name" : "_____test_June26",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-06-26T02:48:33.914Z",
+  "objectRefs" : [ ]
+}
