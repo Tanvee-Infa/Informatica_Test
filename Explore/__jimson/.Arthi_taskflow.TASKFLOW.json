@@ -1,0 +1,48 @@
+{
+  "objectInfo" : {
+    "id" : "5nJiBNcCNk5elj1uM3QWSW",
+    "name" : "Arthi_taskflow",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Xxpr1Iw8jIw8jIw-gt-5865297-2023-08-29T16:15:50.796Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-07-04T09:31:49.700Z",
+  "objectRefs" : [ {
+    "id" : "hfmLxoybmGzgEaKoS4A3ML",
+    "name" : "MappingTaskmovefile2",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01C1HR0Z0000000000TH"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/__jimson"
+  } ]
+}

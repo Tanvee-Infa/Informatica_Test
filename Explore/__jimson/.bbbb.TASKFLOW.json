@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "bSQwvxCWq4PgGGT2TrGDsX",
+    "name" : "bbbb",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "XTbeJOSM8NciZBp-gt-6276313-2023-05-19T16:33:38.798Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "gyfku",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-07-04T09:31:49.712Z",
+  "objectRefs" : [ ]
+}

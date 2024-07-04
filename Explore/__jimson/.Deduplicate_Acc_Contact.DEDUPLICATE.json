@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "5LxPn1yusgggZAG1LbLxmD",
+    "name" : "Deduplicate_Acc_Contact",
+    "type" : "DEDUPLICATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5LxPn1yusgggZAG1LbLxmD"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-07-04T09:31:49.709Z",
+  "objectRefs" : [ ]
+}

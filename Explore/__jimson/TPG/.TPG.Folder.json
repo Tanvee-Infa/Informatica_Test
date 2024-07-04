@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "8tH9S8swk6wimn1s4aV3go",
+    "name" : "TPG",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-07-04T09:31:49.697Z",
+  "objectRefs" : [ ]
+}

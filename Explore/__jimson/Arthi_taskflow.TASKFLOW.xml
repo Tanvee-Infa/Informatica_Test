@@ -1,0 +1,191 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Xxpr1Iw8jIw8jIw-gt-5865297-2023-08-29T16:15:50.796Z::tf.xml</types1:EntryId>
+      <types1:Name>Arthi_taskflow</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>repro.user</types1:CreatedBy>
+      <types1:CreationDate>2023-08-29T16:15:51Z</types1:CreationDate>
+      <types1:ModifiedBy>repro.user</types1:ModifiedBy>
+      <types1:ModificationDate>2023-09-06T12:46:39Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>ampandey@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2023-11-02T11:25:48Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.Arthi_taskflow/Arthi_taskflow.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="Arthi_taskflow"
+                   name="Arthi_taskflow"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Src_FullName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Target_FullName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="FileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">Arthi_inout.csv</option>
+                     <option name="source">constant</option>
+                  </options>
+               </field>
+               <field description="fn:current-date()" name="business_Date" type="date">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">
+                        <expression language="XQuery">fn:current-date()</expression>
+                     </option>
+                     <option name="source">formula</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task 2" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:MappingTaskmovefile2</option>
+                  </options>
+               </field>
+               <field description="" name="Tgt_FileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lm7hhx6u" targetId="llnjrmdg"/>
+               </start>
+               <assignment id="llnjrmdg">
+                  <title>Assignment 1</title>
+                  <operation source="formula" to="temp.Src_FullName">
+                     <expression language="XQuery">'cloudgcs/Arthi/Arthi_Inout.csv'</expression>
+                  </operation>
+                  <operation source="formula" to="temp.Target_FullName">
+                     <expression language="XQuery">'cloudgcs/'||fn:year-from-date(fn:current-date())||'/'||fn:format-number(fn:month-from-date(fn:current-date()),'00')||'/'||fn:format-number(fn:day-from-date(fn:current-date()),'00')||
+'/'||'Arthi_Inout.csv'</expression>
+                  </operation>
+                  <link id="llnnx3kr" targetId="lloga43b"/>
+               </assignment>
+               <eventContainer id="lloga43b">
+                  <service id="llnnx3kq">
+                     <title>Data Task 2</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">MappingTaskmovefile2</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">hfmLxoybmGzgEaKoS4A3ML</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="MappingTaskmovefile2">temp.Data Task 2</operation>
+                           <operation source="field"
+                                      to="MappingTaskmovefile2/input[1]/source[1]/Source[1]/object">temp.Src_FullName</operation>
+                           <operation source="field"
+                                      to="MappingTaskmovefile2/input[1]/target[1]/Target[1]/object">temp.Target_FullName</operation>
+                           <operation source="field"
+                                      to="temp.Data Task 2[1]/input[1]/source[1]/Source[1]/object">temp.Src_FullName</operation>
+                           <operation source="field"
+                                      to="temp.Data Task 2[1]/input[1]/target[1]/Target[1]/object">temp.Target_FullName</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Data Task 2/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Data Task 2/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Data Task 2/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Data Task 2/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="llnnx3ks" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.Data Task 2/fault"
+                            id="lloga439"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Data Task 2/fault"
+                            id="lloga43a"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="MappingTaskmovefile2"
+                              isByCopy="true"
+                              name="MappingTaskmovefile2">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>5nJiBNcCNk5elj1uM3QWSW</types1:GUID>
+      <types1:DisplayName>Arthi_taskflow</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-07-04T09:31:47.51Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
