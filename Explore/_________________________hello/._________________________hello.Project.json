@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "gwzfpgkJiMmicFLySbIMwN",
+    "name" : "_________________________hello",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-08-16T11:59:21.920Z",
+  "objectRefs" : [ ]
+}
