@@ -72,7 +72,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: nsp-git
+          repository: nsp-git/repo
           ref: UAT
           token: ${{ secrets.GH_TOKEN }}
           path: repo
